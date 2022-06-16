@@ -80,8 +80,7 @@ class _ChangePassword extends State<ChangePassword>
                   SizedBox(height: size.width * 0.1),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Old password"),
                     ),
@@ -104,8 +103,7 @@ class _ChangePassword extends State<ChangePassword>
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("New password"),
                     ),
@@ -128,8 +126,7 @@ class _ChangePassword extends State<ChangePassword>
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Confirm new password"),
                     ),

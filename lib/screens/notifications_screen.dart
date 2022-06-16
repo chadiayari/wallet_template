@@ -52,7 +52,7 @@ class _NotificationsScreen extends State<NotificationsScreen>
               : Container(),
           centerTitle: false,
           iconTheme: IconThemeData(
-            color: HexColor(constants.primaryColor), //change your color here
+            color: HexColor(constants.primaryColor),
           ),
           title: Text(
             'Notifications',

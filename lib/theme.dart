@@ -32,7 +32,6 @@ class AppTheme {
           textStyle: TextStyle(
         color: base.bodyText2!.color,
         fontSize: 18,
-        // fontWeight: FontWeight.w700
       )),
       bodyText1: GoogleFonts.nunito(
           textStyle: TextStyle(color: base.bodyText1!.color, fontSize: 16)),
@@ -82,10 +81,6 @@ class AppTheme {
         backgroundColor: Colors.white,
         errorColor: HexColor("#CA443C"),
         textTheme: _buildTextTheme(base.textTheme),
-
-        // buttonTheme: _buttonThemeData(colorScheme),
-        // dialogTheme: _dialogTheme(),
-        // cardTheme: _cardTheme(),
         platform: TargetPlatform.iOS,
         indicatorColor: primaryColor,
         disabledColor: HexColor("#D5D7D8"),

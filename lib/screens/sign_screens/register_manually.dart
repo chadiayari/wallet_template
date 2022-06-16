@@ -109,8 +109,7 @@ class _RegisterScreen extends State<RegisterScreen>
         SizedBox(height: size.height * 0.04),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("First Name"),
           ),
@@ -127,8 +126,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Last Name"),
           ),
@@ -144,8 +142,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Email"),
           ),
@@ -161,8 +158,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("EMIRATES ID Number"),
           ),
@@ -178,8 +174,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Address"),
           ),
@@ -195,8 +190,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Password"),
           ),
@@ -212,8 +206,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Confirm Password"),
           ),
@@ -229,8 +222,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Gender"),
           ),
@@ -272,8 +264,7 @@ class _RegisterScreen extends State<RegisterScreen>
             })),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Phone number"),
           ),
@@ -289,8 +280,7 @@ class _RegisterScreen extends State<RegisterScreen>
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
-          // ignore: unnecessary_const
-          child: const Align(
+          child: Align(
             alignment: Alignment.topLeft,
             child: Text("Date of Expiry"),
           ),

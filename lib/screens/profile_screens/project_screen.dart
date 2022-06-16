@@ -51,7 +51,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
         backgroundColor: Colors.white,
         elevation: 1,
         iconTheme: IconThemeData(
-          color: HexColor(constants.primaryColor), //change your color here
+          color: HexColor(constants.primaryColor),
         ),
       ),
       body: ListView(
@@ -152,7 +152,6 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // for (int i = 0; i < allProjects.length; i++)
                       const Text("1 Share = 10 AED"),
                       SizedBox(height: size.height * 0.01),
                       const Text(

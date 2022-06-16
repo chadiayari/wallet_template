@@ -57,7 +57,6 @@ class _VerifyDetails extends State<VerifyDetails> with WidgetsBindingObserver {
             SizedBox(height: size.height * 0.05),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Column(
@@ -69,18 +68,7 @@ class _VerifyDetails extends State<VerifyDetails> with WidgetsBindingObserver {
                 ),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.only(left: size.width * 0.05),
-            //   child: LoginInputField(
-            //     hintText: emailController.toString(),
-            //     onPressed: () {},
-            //     inputController: emailController,
-            //     onChanged: (value) {},
-            //     pwd: false,
-            //   ),
-            // ),
             SizedBox(height: size.height * 0.03),
-
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Align(
@@ -93,13 +81,6 @@ class _VerifyDetails extends State<VerifyDetails> with WidgetsBindingObserver {
                     ],
                   )),
             ),
-            // Padding(
-            //   padding: EdgeInsets.only(left: size.width * 0.05),
-            //   child: InputField(
-            //       hintText: "105 5023 5236",
-            //       onPressed: () {},
-            //       inputController: phoneController),
-            // ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: InputField(
@@ -107,7 +88,6 @@ class _VerifyDetails extends State<VerifyDetails> with WidgetsBindingObserver {
                   onPressed: () => {},
                   inputController: emailController),
             ),
-
             SizedBox(height: size.height * 0.35),
             RedButton(
                 title: "Continue",

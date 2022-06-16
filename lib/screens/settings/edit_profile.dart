@@ -76,12 +76,10 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                     fontWeight: FontWeight.normal),
               ),
             ),
-
             Padding(
               padding: EdgeInsets.only(
                   left: size.width * 0.05, top: size.width * 0.1),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("First name"),
               ),
@@ -102,8 +100,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             Padding(
               padding: EdgeInsets.only(left: size.width * 0.05),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Last name"),
               ),
@@ -124,8 +121,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("ADCC Membership Number"),
               ),
@@ -146,8 +142,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Emirates ID number"),
               ),
@@ -168,8 +163,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Verified Phone"),
               ),
@@ -190,8 +184,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Preferred Phone"),
               ),
@@ -212,8 +205,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Verified E-mail"),
               ),
@@ -234,8 +226,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Preferred E-mail"),
               ),
@@ -254,11 +245,9 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                 }),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Emirates ID - Date of Expiry"),
               ),
@@ -277,11 +266,9 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                 }),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Address Line"),
               ),
@@ -302,16 +289,14 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Date of Birth"),
               ),
             ),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Gender"),
               ),
@@ -352,9 +337,6 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                     ),
                   );
                 })),
-
-            // Consumer<Avatar>(builder: (context, avatar, _) {
-            //   return
             Container(
               padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
               child: MaterialButton(

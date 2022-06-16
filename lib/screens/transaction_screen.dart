@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -28,17 +26,6 @@ class _TransactionScreen extends State<TransactionScreen>
       isBottomBarOverlay: true,
       progressIndicator: const Load(),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    //Loader.hide();
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override

@@ -42,7 +42,6 @@ class _SignupPageState extends State<SignupPage> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Theme.of(context).primaryColor,
-          // leading: Container(),
         ),
         body: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),

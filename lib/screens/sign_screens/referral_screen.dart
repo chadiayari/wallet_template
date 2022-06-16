@@ -109,7 +109,6 @@ class _ReferralScreen extends State<ReferralScreen> {
                             return null;
                           },
                           obscureText: false,
-                          //onChanged: onChanged,
                           controller: referralController,
                           cursorColor: Colors.black,
                           style: const TextStyle(color: Colors.black),

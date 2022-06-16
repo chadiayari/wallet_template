@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           backgroundColor: HexColor(constants.backgroundColor),
           elevation: 1,
           iconTheme: IconThemeData(
-            color: HexColor(constants.primaryColor), //change your color here
+            color: HexColor(constants.primaryColor),
           ),
         ),
         body: loaded == false

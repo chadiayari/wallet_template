@@ -237,27 +237,6 @@ class _NavDrawerState extends State<NavDrawer> {
                   MaterialPageRoute(builder: (_) => const SettingsScreen())),
             },
           ),
-          // ListTile(
-          //   leading: Icon(Icons.share, color: HexColor(constants.primaryColor)),
-          //   title: Text('Share purchase',
-          //       style: Theme.of(context).textTheme.subtitle1!.copyWith(
-          //           color: HexColor(constants.primaryColor),
-          //           fontWeight: FontWeight.normal)),
-          //   onTap: () => {},
-          // ),
-          // ListTile(
-          //   leading: Icon(
-          //     Icons.money,
-          //     color: HexColor(constants.primaryColor),
-          //   ),
-          //   title: Text(
-          //     'Share transfer',
-          //     style: Theme.of(context).textTheme.subtitle1!.copyWith(
-          //         color: HexColor(constants.primaryColor),
-          //         fontWeight: FontWeight.normal),
-          //   ),
-          //   onTap: () => {Navigator.of(context).pop()},
-          // ),
           ListTile(
             leading: Icon(Icons.picture_as_pdf,
                 color: HexColor(constants.primaryColor)),

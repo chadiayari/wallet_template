@@ -88,14 +88,6 @@ class _SettingsScreen extends State<SettingsScreen>
                         child:
                             const Icon(Icons.fingerprint, color: Colors.white),
                       ),
-                      SizedBox(
-                        width: size.width * 0.1,
-                      ),
-                      Text(
-                        "Sign in with UAE PASS",
-                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.normal),
-                      ),
                       const Spacer(),
                     ],
                   ),

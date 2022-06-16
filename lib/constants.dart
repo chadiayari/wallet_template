@@ -16,5 +16,3 @@ BoxDecoration backgroundGradientStyle = const BoxDecoration(
     Color(0xFF0D4349),
   ],
 ));
-
-String baseUrl = "https://uae-nadhir-app.herokuapp.com";

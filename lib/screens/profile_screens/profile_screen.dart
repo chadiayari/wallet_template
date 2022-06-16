@@ -67,7 +67,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
         backgroundColor: HexColor(constants.primaryColor),
         elevation: 1,
         iconTheme: const IconThemeData(
-          color: Colors.white, //change your color here
+          color: Colors.white,
         ),
       ),
       body: ListView(

@@ -63,8 +63,7 @@ class _LanguageScreen extends State<LanguageScreen>
             SizedBox(height: size.width * 0.1),
             const Padding(
               padding: EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
-              child: const Align(
+              child: Align(
                 alignment: Alignment.topLeft,
                 child: Text("Choose your preferred language"),
               ),

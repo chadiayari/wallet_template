@@ -76,19 +76,10 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                           fontWeight: FontWeight.normal),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(size.width * 0.05),
-                    child: Text(
-                      'A UAE Pass is required to log into your ADCC account',
-                      style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.normal),
-                    ),
-                  ),
                   const Spacer(),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Emirates ID"),
                     ),
@@ -111,8 +102,7 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Password"),
                     ),
@@ -133,41 +123,7 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                       pwd: true,
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.all(15),
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: HexColor(constants.backgroundColor),
-                      borderRadius: const BorderRadius.all(Radius.circular(12)),
-                    ),
-                    child: Row(
-                      children: [
-                        const Spacer(),
-                        Container(
-                          color: const Color.fromRGBO(85, 201, 178, 1),
-                          child: const Icon(Icons.fingerprint,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          width: size.width * 0.1,
-                        ),
-                        Text(
-                          "Sign in with UAE PASS",
-                          style: Theme.of(context)
-                              .textTheme
-                              .subtitle1!
-                              .copyWith(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal),
-                        ),
-                        const Spacer(),
-                      ],
-                    ),
-                  ),
-
                   const Spacer(),
-                  // Consumer<Avatar>(builder: (context, avatar, _) {
-                  //   return
                   Container(
                     padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
                     child: MaterialButton(
