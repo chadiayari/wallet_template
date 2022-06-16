@@ -30,7 +30,7 @@ class BankWidget extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.contain,
-              image: AssetImage('assets/images/' + logo),
+              image: AssetImage('assets/images/$logo'),
             ),
           ),
         ),

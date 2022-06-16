@@ -11,7 +11,7 @@ class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
   @override
-  _DashboardScreen createState() => _DashboardScreen();
+  State<DashboardScreen> createState() => _DashboardScreen();
 }
 
 class _DashboardScreen extends State<DashboardScreen>

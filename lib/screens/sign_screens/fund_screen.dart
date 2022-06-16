@@ -7,7 +7,7 @@ class FundScreen extends StatefulWidget {
   const FundScreen({Key? key}) : super(key: key);
 
   @override
-  _FundScreen createState() => _FundScreen();
+  State<FundScreen> createState() => _FundScreen();
 }
 
 class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
@@ -27,7 +27,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -45,7 +45,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                 child: Text(
                   "Fund your account",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
               ),
@@ -75,7 +75,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                     }),
                     controller: sharesController,
                     cursorColor: Colors.black,
-                    style: TextStyle(color: HexColor(constants.primaryRed)),
+                    style: TextStyle(color: HexColor(constants.primaryColor)),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         borderSide:
@@ -119,7 +119,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                     Text(
                       "$totalPay2 AED",
                       style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: HexColor(constants.primaryRed),
+                          color: HexColor(constants.primaryColor),
                           fontWeight: FontWeight.normal),
                     ),
                   ],
@@ -137,8 +137,8 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                     minWidth: size.width * 0.4,
                     height: 50,
                     color: hasValue
-                        ? HexColor(constants.primaryRed)
-                        : HexColor(constants.primaryRed).withOpacity(0.3),
+                        ? HexColor(constants.primaryColor)
+                        : HexColor(constants.primaryColor).withOpacity(0.3),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(

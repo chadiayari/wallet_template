@@ -73,7 +73,7 @@ class LoginInputField extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white,
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: HexColor(constants.primaryRed)),
+            borderSide: BorderSide(color: HexColor(constants.primaryColor)),
           ),
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
@@ -113,11 +113,12 @@ class EditProfileField extends StatelessWidget {
         controller: inputController,
         cursorColor: Colors.black,
         style: TextStyle(
-            color: HexColor(constants.primaryRed), fontWeight: FontWeight.w500),
+            color: HexColor(constants.primaryColor),
+            fontWeight: FontWeight.w500),
         decoration: InputDecoration(
           fillColor: Colors.white,
           focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: HexColor(constants.primaryRed)),
+            borderSide: BorderSide(color: HexColor(constants.primaryColor)),
           ),
         ),
       ),

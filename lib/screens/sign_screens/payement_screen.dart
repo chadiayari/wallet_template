@@ -8,7 +8,7 @@ class PayementScreen extends StatefulWidget {
   const PayementScreen({Key? key}) : super(key: key);
 
   @override
-  _PayementScreen createState() => _PayementScreen();
+  State<PayementScreen> createState() => _PayementScreen();
 }
 
 class _PayementScreen extends State<PayementScreen>
@@ -18,12 +18,6 @@ class _PayementScreen extends State<PayementScreen>
   bool passwordHasValue = false;
   bool emailHasValue = false;
   String amount = "0";
-
-  @override
-  void initState() {
-    super.initState();
-    print(amount);
-  }
 
   payPopup() {
     showDialog(
@@ -36,7 +30,7 @@ class _PayementScreen extends State<PayementScreen>
               content: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: HexColor(constants.primaryRed)),
+                    color: HexColor(constants.primaryColor)),
                 padding: const EdgeInsets.all(15),
                 height: 250,
                 width: 250,
@@ -74,7 +68,7 @@ class _PayementScreen extends State<PayementScreen>
                                   style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 18,
-                                      color: HexColor(constants.primaryRed)),
+                                      color: HexColor(constants.primaryColor)),
                                 ),
                               ]),
                           onPressed: () {
@@ -102,7 +96,7 @@ class _PayementScreen extends State<PayementScreen>
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -120,7 +114,7 @@ class _PayementScreen extends State<PayementScreen>
                   Text(
                     "Payement",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: HexColor(constants.primaryRed),
+                        color: HexColor(constants.primaryColor),
                         fontWeight: FontWeight.normal),
                   ),
                   Align(
@@ -131,7 +125,7 @@ class _PayementScreen extends State<PayementScreen>
                       child: Text(
                         "Sender",
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                            color: HexColor(constants.primaryRed),
+                            color: HexColor(constants.primaryColor),
                             fontWeight: FontWeight.normal),
                       ),
                     ),
@@ -162,7 +156,8 @@ class _PayementScreen extends State<PayementScreen>
                                       .textTheme
                                       .subtitle1!
                                       .copyWith(
-                                          color: HexColor(constants.primaryRed),
+                                          color:
+                                              HexColor(constants.primaryColor),
                                           fontWeight: FontWeight.normal),
                                 )
                               ],
@@ -180,14 +175,14 @@ class _PayementScreen extends State<PayementScreen>
                             }
                           }),
                           controller: userNameController,
-                          cursorColor: HexColor(constants.primaryRed),
-                          style:
-                              TextStyle(color: HexColor(constants.primaryRed)),
+                          cursorColor: HexColor(constants.primaryColor),
+                          style: TextStyle(
+                              color: HexColor(constants.primaryColor)),
                           decoration: InputDecoration(
                             fillColor: Colors.white,
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: HexColor(constants.primaryRed)),
+                                  color: HexColor(constants.primaryColor)),
                             ),
                             hintText: "Example_01",
                             hintStyle:
@@ -205,9 +200,9 @@ class _PayementScreen extends State<PayementScreen>
                             }
                           }),
                           controller: passwordController,
-                          cursorColor: HexColor(constants.primaryRed),
-                          style:
-                              TextStyle(color: HexColor(constants.primaryRed)),
+                          cursorColor: HexColor(constants.primaryColor),
+                          style: TextStyle(
+                              color: HexColor(constants.primaryColor)),
                           obscureText: true,
                           enableSuggestions: false,
                           autocorrect: false,
@@ -215,7 +210,7 @@ class _PayementScreen extends State<PayementScreen>
                             fillColor: Colors.white,
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: HexColor(constants.primaryRed)),
+                                  color: HexColor(constants.primaryColor)),
                             ),
                             hintText: "******",
                             hintStyle:
@@ -233,7 +228,7 @@ class _PayementScreen extends State<PayementScreen>
                       child: Text(
                         "Receiver",
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                            color: HexColor(constants.primaryRed),
+                            color: HexColor(constants.primaryColor),
                             fontWeight: FontWeight.normal),
                       ),
                     ),
@@ -255,8 +250,8 @@ class _PayementScreen extends State<PayementScreen>
                         minWidth: size.width * 0.4,
                         height: 50,
                         color: (passwordHasValue && emailHasValue)
-                            ? HexColor(constants.primaryRed)
-                            : HexColor(constants.primaryRed).withOpacity(0.3),
+                            ? HexColor(constants.primaryColor)
+                            : HexColor(constants.primaryColor).withOpacity(0.3),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         child: Row(

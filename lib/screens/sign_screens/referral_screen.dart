@@ -8,7 +8,7 @@ class ReferralScreen extends StatefulWidget {
   const ReferralScreen({Key? key}) : super(key: key);
 
   @override
-  _ReferralScreen createState() => _ReferralScreen();
+  State<ReferralScreen> createState() => _ReferralScreen();
 }
 
 class _ReferralScreen extends State<ReferralScreen> {
@@ -27,7 +27,7 @@ class _ReferralScreen extends State<ReferralScreen> {
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -46,7 +46,7 @@ class _ReferralScreen extends State<ReferralScreen> {
                 child: Text(
                   "Where did you hear about us?",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
               ),
@@ -63,7 +63,7 @@ class _ReferralScreen extends State<ReferralScreen> {
                         child: DropdownButton<String>(
                           icon: Icon(
                             Icons.keyboard_arrow_down,
-                            color: HexColor(constants.primaryRed),
+                            color: HexColor(constants.primaryColor),
                           ),
                           isDense: true,
                           value: dropdownValue,
@@ -109,7 +109,6 @@ class _ReferralScreen extends State<ReferralScreen> {
                             return null;
                           },
                           obscureText: false,
-                          //onChanged: onChanged,
                           controller: referralController,
                           cursorColor: Colors.black,
                           style: const TextStyle(color: Colors.black),
@@ -117,7 +116,7 @@ class _ReferralScreen extends State<ReferralScreen> {
                             fillColor: Colors.white,
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
-                                  color: HexColor(constants.primaryRed)),
+                                  color: HexColor(constants.primaryColor)),
                             ),
                             hintText: dropdownValue == 'A friend'
                                 ? "Please enter the name of the friend"

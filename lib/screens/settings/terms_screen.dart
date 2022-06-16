@@ -8,7 +8,7 @@ class TermsConditions extends StatefulWidget {
   const TermsConditions({Key? key}) : super(key: key);
 
   @override
-  _TermsConditions createState() => _TermsConditions();
+  State<TermsConditions> createState() => _TermsConditions();
 }
 
 enum SingingCharacter { english, arabic }
@@ -37,7 +37,7 @@ class _TermsConditions extends State<TermsConditions>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -57,7 +57,7 @@ class _TermsConditions extends State<TermsConditions>
               child: Text(
                 "Terms and conditions",
                 style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: HexColor(constants.primaryRed),
+                    color: HexColor(constants.primaryColor),
                     fontWeight: FontWeight.normal),
               ),
             ),
@@ -65,7 +65,6 @@ class _TermsConditions extends State<TermsConditions>
             Padding(
               padding: EdgeInsets.only(
                   left: size.width * 0.04, right: size.width * 0.04),
-              // ignore: unnecessary_const
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -75,8 +74,7 @@ class _TermsConditions extends State<TermsConditions>
             SizedBox(height: size.width * 0.1),
             Padding(
               padding: EdgeInsets.only(
-                  left: size.width * 0.04,
-                  right: size.width * 0.04), // ignore: unnecessary_const
+                  left: size.width * 0.04, right: size.width * 0.04),
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -86,7 +84,6 @@ class _TermsConditions extends State<TermsConditions>
             SizedBox(height: size.width * 0.1),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
-              // ignore: unnecessary_const
               child: Row(
                 children: [
                   const Icon(Icons.dangerous_outlined),

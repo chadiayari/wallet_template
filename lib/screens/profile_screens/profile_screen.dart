@@ -1,4 +1,3 @@
-import 'package:wallet_template/models/login_user.dart';
 import 'package:wallet_template/screens/profile_screens/profile_capital.dart';
 import 'package:wallet_template/screens/profile_screens/profile_profit.dart';
 import 'package:wallet_template/screens/profile_screens/profile_projects.dart';
@@ -15,7 +14,7 @@ class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreen createState() => _ProfileScreen();
+  State<ProfileScreen> createState() => _ProfileScreen();
 }
 
 class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
@@ -35,7 +34,6 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
   bool isSelected1 = true;
   bool isSelected2 = false;
   bool isSelected3 = false;
-  LoggedInUser userData = LoggedInUser();
 
   @override
   void dispose() {
@@ -54,7 +52,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
         title: Container(
           height: size.height * 0.2,
           decoration: BoxDecoration(
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
@@ -66,10 +64,10 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
           ),
         ),
         shadowColor: Colors.transparent,
-        backgroundColor: HexColor(constants.primaryRed),
+        backgroundColor: HexColor(constants.primaryColor),
         elevation: 1,
         iconTheme: const IconThemeData(
-          color: Colors.white, //change your color here
+          color: Colors.white,
         ),
       ),
       body: ListView(
@@ -82,7 +80,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                   padding: EdgeInsets.only(left: size.width * 0.05),
                   height: size.height * 0.18,
                   decoration: BoxDecoration(
-                    color: HexColor(constants.primaryRed),
+                    color: HexColor(constants.primaryColor),
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(20),
                         bottomRight: Radius.circular(20)),
@@ -94,7 +92,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                         child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            userData.firstName.toString(),
+                            "first name",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6!
@@ -106,13 +104,12 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Clipboard.setData(ClipboardData(
-                              text: userData.emiratesId.toString()));
+                          Clipboard.setData(const ClipboardData(text: "sss"));
                         },
                         child: Row(
                           children: [
                             Text(
-                              userData.emiratesId.toString(),
+                              "id",
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
@@ -127,8 +124,8 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                               ),
                               iconSize: size.width * 0.05,
                               onPressed: () {
-                                Clipboard.setData(ClipboardData(
-                                    text: userData.emiratesId.toString()));
+                                Clipboard.setData(
+                                    const ClipboardData(text: "sss"));
                               },
                             ),
                           ],

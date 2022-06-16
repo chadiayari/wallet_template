@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
-import '../models/login_user.dart';
 import '../widgets/loading.dart';
 
 class TransferScreen extends StatefulWidget {
   const TransferScreen({Key? key}) : super(key: key);
 
   @override
-  _TransferScreen createState() => _TransferScreen();
+  State<TransferScreen> createState() => _TransferScreen();
 }
 
 class _TransferScreen extends State<TransferScreen>
@@ -20,7 +19,6 @@ class _TransferScreen extends State<TransferScreen>
   double totalPay2 = 0.00;
   bool nameHasValue = false;
   bool sharesHasValue = false;
-  LoggedInUser userData = LoggedInUser();
 
   loading() {
     Loader.show(
@@ -65,13 +63,13 @@ class _TransferScreen extends State<TransferScreen>
                               .textTheme
                               .headline6!
                               .copyWith(
-                                  color: HexColor(constants.primaryRed),
+                                  color: HexColor(constants.primaryColor),
                                   fontWeight: FontWeight.normal),
                         ),
                         SizedBox(height: size.height * 0.03),
                         Icon(
                           Icons.verified_rounded,
-                          color: HexColor(constants.primaryRed),
+                          color: HexColor(constants.primaryColor),
                           size: size.width * 0.2,
                         ),
                         SizedBox(height: size.height * 0.03),
@@ -81,7 +79,7 @@ class _TransferScreen extends State<TransferScreen>
                               .textTheme
                               .headline6!
                               .copyWith(
-                                  color: HexColor(constants.primaryRed),
+                                  color: HexColor(constants.primaryColor),
                                   fontWeight: FontWeight.normal),
                         ),
                         const SizedBox(
@@ -103,7 +101,7 @@ class _TransferScreen extends State<TransferScreen>
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -121,7 +119,7 @@ class _TransferScreen extends State<TransferScreen>
                 child: Text(
                   "Transfer Shares",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
               ),
@@ -221,7 +219,7 @@ class _TransferScreen extends State<TransferScreen>
                     }),
                     controller: sharesController,
                     cursorColor: Colors.black,
-                    style: TextStyle(color: HexColor(constants.primaryRed)),
+                    style: TextStyle(color: HexColor(constants.primaryColor)),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         borderSide:
@@ -246,32 +244,16 @@ class _TransferScreen extends State<TransferScreen>
                   minWidth: size.width * 0.4,
                   height: 50,
                   color: (nameHasValue && sharesHasValue)
-                      ? HexColor(constants.primaryRed)
-                      : HexColor(constants.primaryRed).withOpacity(0.3),
+                      ? HexColor(constants.primaryColor)
+                      : HexColor(constants.primaryColor).withOpacity(0.3),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Text(
-                          "Transfer",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                              color: Colors.white),
-                        ),
-                      ]),
                   onPressed: !(nameHasValue && sharesHasValue)
                       ? null
                       : () async {
                           setState(() {
                             loading();
                           });
-                          Map data = {
-                            "projectId": "6266c9ba9ff236c85096019e",
-                            "numberOfShares": sharesController.text,
-                            "beneficial": usernameController.text,
-                          };
 
                           try {
                             Loader.hide();
@@ -285,6 +267,17 @@ class _TransferScreen extends State<TransferScreen>
                             );
                           }
                         },
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const <Widget>[
+                        Text(
+                          "Transfer",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                              color: Colors.white),
+                        ),
+                      ]),
                 ),
               ),
             ],

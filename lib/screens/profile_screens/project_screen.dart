@@ -1,5 +1,4 @@
 import 'package:wallet_template/components/buttons.dart';
-import 'package:wallet_template/models/project.dart';
 import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:wallet_template/widgets/project_widget.dart';
 
@@ -12,14 +11,11 @@ class ProjectScreen extends StatefulWidget {
   const ProjectScreen({Key? key}) : super(key: key);
 
   @override
-  _ProjectScreen createState() => _ProjectScreen();
+  State<ProjectScreen> createState() => _ProjectScreen();
 }
 
 class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
-  Project projectData = Project();
-  ShareValueHistory projectData2 = ShareValueHistory();
   bool isLoading = true;
-  List<Project> allProjects = [];
 
   @override
   void initState() {
@@ -42,7 +38,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
               child: IconButton(
                 icon: Icon(
                   Icons.arrow_back_outlined,
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -55,7 +51,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
         backgroundColor: Colors.white,
         elevation: 1,
         iconTheme: IconThemeData(
-          color: HexColor(constants.primaryRed), //change your color here
+          color: HexColor(constants.primaryColor),
         ),
       ),
       body: ListView(
@@ -95,7 +91,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                projectData.title.toString(),
+                                "aaa",
                                 style: TextStyle(
                                     color: HexColor("#172B61"),
                                     fontWeight: FontWeight.normal,
@@ -156,7 +152,6 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // for (int i = 0; i < allProjects.length; i++)
                       const Text("1 Share = 10 AED"),
                       SizedBox(height: size.height * 0.01),
                       const Text(
@@ -169,8 +164,8 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                     left: size.width * 0.03, right: size.width * 0.03),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       "Share history",
                       style: TextStyle(
                           color: Colors.black,
@@ -201,11 +196,4 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
       ),
     );
   }
-}
-
-class _SharesData {
-  _SharesData(this.year, this.sales);
-
-  final String year;
-  final double sales;
 }

@@ -1,4 +1,3 @@
-import 'package:wallet_template/models/login_user.dart';
 import 'package:wallet_template/screens/settings/settings_screen.dart';
 import 'package:wallet_template/screens/sign_screens/welcome_screen.dart';
 import 'package:wallet_template/screens/transaction_screen.dart';
@@ -18,8 +17,6 @@ class NavDrawer extends StatefulWidget {
 }
 
 class _NavDrawerState extends State<NavDrawer> {
-  LoggedInUser userData = LoggedInUser();
-
   @override
   void initState() {
     super.initState();
@@ -79,8 +76,8 @@ class _NavDrawerState extends State<NavDrawer> {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 15,
-                                            color:
-                                                HexColor(constants.primaryRed)),
+                                            color: HexColor(
+                                                constants.primaryColor)),
                                       ),
                                     ]),
                                 onPressed: () {
@@ -152,9 +149,7 @@ class _NavDrawerState extends State<NavDrawer> {
                           height: size.height * 0.01,
                         ),
                         Text(
-                          userData.firstName.toString() +
-                              " " +
-                              userData.lastName.toString(),
+                          "First Name" "Last Name",
                           style: Theme.of(context)
                               .textTheme
                               .headline6!
@@ -188,18 +183,16 @@ class _NavDrawerState extends State<NavDrawer> {
                   size: size.width * 0.1,
                 ),
                 Text(
-                  userData.firstName.toString() +
-                      " " +
-                      userData.lastName.toString(),
+                  "First" "Last",
                   style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      userData.emiratesId.toString(),
+                      "Id number",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                           color: Colors.black, fontWeight: FontWeight.normal),
                     ),
@@ -209,8 +202,8 @@ class _NavDrawerState extends State<NavDrawer> {
                         icon: const Icon(Icons.copy),
                         iconSize: size.width * 0.05,
                         onPressed: () {
-                          Clipboard.setData(ClipboardData(
-                              text: userData.firstName.toString()));
+                          Clipboard.setData(
+                              const ClipboardData(text: "First Name"));
                         },
                       ),
                     ),
@@ -221,22 +214,22 @@ class _NavDrawerState extends State<NavDrawer> {
           ),
           ListTile(
             leading:
-                Icon(Icons.qr_code_2, color: HexColor(constants.primaryRed)),
+                Icon(Icons.qr_code_2, color: HexColor(constants.primaryColor)),
             title: Text(
               'QR Code',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {Navigator.pop(context), qrPopup()},
           ),
           ListTile(
             leading:
-                Icon(Icons.settings, color: HexColor(constants.primaryRed)),
+                Icon(Icons.settings, color: HexColor(constants.primaryColor)),
             title: Text(
               'Settings',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {
@@ -244,44 +237,24 @@ class _NavDrawerState extends State<NavDrawer> {
                   MaterialPageRoute(builder: (_) => const SettingsScreen())),
             },
           ),
-          // ListTile(
-          //   leading: Icon(Icons.share, color: HexColor(constants.primaryRed)),
-          //   title: Text('Share purchase',
-          //       style: Theme.of(context).textTheme.subtitle1!.copyWith(
-          //           color: HexColor(constants.primaryRed),
-          //           fontWeight: FontWeight.normal)),
-          //   onTap: () => {},
-          // ),
-          // ListTile(
-          //   leading: Icon(
-          //     Icons.money,
-          //     color: HexColor(constants.primaryRed),
-          //   ),
-          //   title: Text(
-          //     'Share transfer',
-          //     style: Theme.of(context).textTheme.subtitle1!.copyWith(
-          //         color: HexColor(constants.primaryRed),
-          //         fontWeight: FontWeight.normal),
-          //   ),
-          //   onTap: () => {Navigator.of(context).pop()},
-          // ),
           ListTile(
             leading: Icon(Icons.picture_as_pdf,
-                color: HexColor(constants.primaryRed)),
+                color: HexColor(constants.primaryColor)),
             title: Text(
               'Generate Certificate',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {},
           ),
           ListTile(
-            leading: Icon(Icons.history, color: HexColor(constants.primaryRed)),
+            leading:
+                Icon(Icons.history, color: HexColor(constants.primaryColor)),
             title: Text(
               'Transaction history',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {
@@ -290,11 +263,12 @@ class _NavDrawerState extends State<NavDrawer> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.logout, color: HexColor(constants.primaryRed)),
+            leading:
+                Icon(Icons.logout, color: HexColor(constants.primaryColor)),
             title: Text(
               'Logout',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {Navigator.pop(context), logoutPopup()},

@@ -7,7 +7,7 @@ class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
 
   @override
-  _SignupPageState createState() => _SignupPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
 class _SignupPageState extends State<SignupPage> {
@@ -42,7 +42,6 @@ class _SignupPageState extends State<SignupPage> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Theme.of(context).primaryColor,
-          // leading: Container(),
         ),
         body: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),

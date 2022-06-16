@@ -1,4 +1,3 @@
-import 'package:wallet_template/models/login_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -10,7 +9,7 @@ class PurchaseScreen extends StatefulWidget {
   const PurchaseScreen({Key? key}) : super(key: key);
 
   @override
-  _PurchaseScreen createState() => _PurchaseScreen();
+  State<PurchaseScreen> createState() => _PurchaseScreen();
 }
 
 class _PurchaseScreen extends State<PurchaseScreen>
@@ -19,8 +18,6 @@ class _PurchaseScreen extends State<PurchaseScreen>
   double totalPay2 = 0.00;
   double shareValue = 10.00;
   bool hasValue = false;
-
-  LoggedInUser userData = LoggedInUser();
 
   loading() {
     Loader.show(
@@ -47,7 +44,7 @@ class _PurchaseScreen extends State<PurchaseScreen>
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -65,7 +62,7 @@ class _PurchaseScreen extends State<PurchaseScreen>
                 child: Text(
                   "Fund your account",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
               ),
@@ -96,7 +93,7 @@ class _PurchaseScreen extends State<PurchaseScreen>
                     }),
                     controller: sharesController,
                     cursorColor: Colors.black,
-                    style: TextStyle(color: HexColor(constants.primaryRed)),
+                    style: TextStyle(color: HexColor(constants.primaryColor)),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         borderSide:
@@ -143,7 +140,7 @@ class _PurchaseScreen extends State<PurchaseScreen>
                     Text(
                       "$totalPay2 AED",
                       style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: HexColor(constants.primaryRed),
+                          color: HexColor(constants.primaryColor),
                           fontWeight: FontWeight.normal),
                     ),
                   ],
@@ -164,31 +161,16 @@ class _PurchaseScreen extends State<PurchaseScreen>
                     minWidth: size.width * 0.4,
                     height: 50,
                     color: hasValue
-                        ? HexColor(constants.primaryRed)
-                        : HexColor(constants.primaryRed).withOpacity(0.3),
+                        ? HexColor(constants.primaryColor)
+                        : HexColor(constants.primaryColor).withOpacity(0.3),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Text(
-                            "Pay Now",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
-                                color: Colors.white),
-                          ),
-                        ]),
                     onPressed: !(hasValue)
                         ? null
                         : () async {
                             setState(() {
                               loading();
                             });
-                            Map data = {
-                              "projectId": "6266c9ba9ff236c85096019e",
-                              "numberOfShares": sharesController.text,
-                            };
 
                             try {
                               Loader.hide();
@@ -211,6 +193,17 @@ class _PurchaseScreen extends State<PurchaseScreen>
                                 MaterialPageRoute(
                                     builder: (_) => const DashboardScreen()));
                           },
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            "Pay Now",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Colors.white),
+                          ),
+                        ]),
                   )),
             ],
           ),

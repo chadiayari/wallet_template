@@ -1,6 +1,4 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/models/login_user.dart';
-import 'package:wallet_template/models/user.dart';
 import 'package:wallet_template/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
@@ -8,11 +6,10 @@ import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
 
 class ChangePassword extends StatefulWidget {
-  ChangePassword({Key? key}) : super(key: key);
-  final User user = User();
+  const ChangePassword({Key? key}) : super(key: key);
 
   @override
-  _ChangePassword createState() => _ChangePassword();
+  State<ChangePassword> createState() => _ChangePassword();
 }
 
 class _ChangePassword extends State<ChangePassword>
@@ -25,8 +22,6 @@ class _ChangePassword extends State<ChangePassword>
   bool pwdHasValue = false;
   bool newPwdHasValue = false;
   bool confNewPwdHasValue = false;
-  LoggedInUser userData = LoggedInUser();
-  var response;
 
   loading() {
     Loader.show(
@@ -59,7 +54,7 @@ class _ChangePassword extends State<ChangePassword>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -79,14 +74,13 @@ class _ChangePassword extends State<ChangePassword>
                   Text(
                     "Change Password",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: HexColor(constants.primaryRed),
+                        color: HexColor(constants.primaryColor),
                         fontWeight: FontWeight.normal),
                   ),
                   SizedBox(height: size.width * 0.1),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Old password"),
                     ),
@@ -109,8 +103,7 @@ class _ChangePassword extends State<ChangePassword>
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("New password"),
                     ),
@@ -133,8 +126,7 @@ class _ChangePassword extends State<ChangePassword>
                   ),
                   const Padding(
                     padding: EdgeInsets.only(left: 20.0),
-                    // ignore: unnecessary_const
-                    child: const Align(
+                    child: Align(
                       alignment: Alignment.topLeft,
                       child: Text("Confirm new password"),
                     ),
@@ -161,10 +153,11 @@ class _ChangePassword extends State<ChangePassword>
                     child: MaterialButton(
                       minWidth: size.width * 0.4,
                       height: 50,
-                      color:
-                          (pwdHasValue && newPwdHasValue && confNewPwdHasValue)
-                              ? HexColor(constants.primaryRed)
-                              : HexColor(constants.primaryRed).withOpacity(0.3),
+                      color: (pwdHasValue &&
+                              newPwdHasValue &&
+                              confNewPwdHasValue)
+                          ? HexColor(constants.primaryColor)
+                          : HexColor(constants.primaryColor).withOpacity(0.3),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
@@ -183,11 +176,6 @@ class _ChangePassword extends State<ChangePassword>
                           setState(() {
                             loading();
                           });
-                          Map data = {
-                            "oldPassword": oldPassword.text,
-                            "newPassword": newPassword.text,
-                          };
-
                           try {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(

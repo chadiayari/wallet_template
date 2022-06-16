@@ -163,7 +163,7 @@ class ProjectImageBox extends StatelessWidget {
         color: Colors.white,
         image: DecorationImage(
           fit: BoxFit.contain,
-          image: AssetImage('assets/images/' + imageName),
+          image: AssetImage('assets/images/$imageName'),
         ),
         borderRadius: BorderRadius.circular(15),
         boxShadow: <BoxShadow>[

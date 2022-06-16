@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../../constants.dart' as constants;
-import '../models/login_user.dart';
 import '../widgets/loading.dart';
 import '../widgets/transaction_widget.dart';
 
@@ -10,7 +9,7 @@ class TransactionScreen extends StatefulWidget {
   const TransactionScreen({Key? key}) : super(key: key);
 
   @override
-  _TransactionScreen createState() => _TransactionScreen();
+  State<TransactionScreen> createState() => _TransactionScreen();
 }
 
 class _TransactionScreen extends State<TransactionScreen>
@@ -18,9 +17,6 @@ class _TransactionScreen extends State<TransactionScreen>
   final TextEditingController sharesController = TextEditingController();
   bool profit = true;
   bool shares = false;
-
-  LoggedInUser userData = LoggedInUser();
-  var response;
   bool loaded = false;
 
   loading() {
@@ -30,17 +26,6 @@ class _TransactionScreen extends State<TransactionScreen>
       isBottomBarOverlay: true,
       progressIndicator: const Load(),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    //Loader.hide();
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override
@@ -54,7 +39,7 @@ class _TransactionScreen extends State<TransactionScreen>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -72,7 +57,7 @@ class _TransactionScreen extends State<TransactionScreen>
                   child: Text(
                     "Transaction History",
                     style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: HexColor(constants.primaryRed),
+                        color: HexColor(constants.primaryColor),
                         fontWeight: FontWeight.normal),
                   ),
                 ),
@@ -95,14 +80,13 @@ class _TransactionScreen extends State<TransactionScreen>
                   ),
                   child: Column(
                     children: [
-                      for (int i = 0; i < response.length; i++)
-                        TransactionWidget(
-                          date: response[i]["createdAt"],
-                          id: response[i]["_id"],
-                          nbShares: response[i]["numberOfShares"].toString(),
-                          type: response[i]["transactionType"],
-                          total: response[i]["total"].toString(),
-                        ),
+                      const TransactionWidget(
+                        date: "createdAt",
+                        id: "id",
+                        nbShares: "nb of shares",
+                        type: "transaction type",
+                        total: "total",
+                      ),
                     ],
                   ),
                 ),
