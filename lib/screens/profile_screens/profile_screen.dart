@@ -4,7 +4,6 @@ import 'package:wallet_template/screens/profile_screens/profile_projects.dart';
 import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:wallet_template/widgets/profile_circles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/services.dart';
 
@@ -34,12 +33,6 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
   bool isSelected1 = true;
   bool isSelected2 = false;
   bool isSelected3 = false;
-
-  @override
-  void dispose() {
-    super.dispose();
-    Loader.hide();
-  }
 
   @override
   Widget build(BuildContext context) {

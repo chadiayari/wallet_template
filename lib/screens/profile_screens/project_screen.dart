@@ -15,8 +15,6 @@ class ProjectScreen extends StatefulWidget {
 }
 
 class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
-  bool isLoading = true;
-
   @override
   void initState() {
     super.initState();

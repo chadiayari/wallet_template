@@ -2,10 +2,8 @@ import 'package:wallet_template/screens/notifications_screen.dart';
 import 'package:wallet_template/screens/profile_screens/profile_screen.dart';
 import 'package:wallet_template/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
-import '../widgets/loading.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -24,21 +22,10 @@ class _DashboardScreen extends State<DashboardScreen>
     2: const ProfileScreen(),
   };
 
-  loading() {
-    Loader.show(
-      context,
-      isAppbarOverlay: true,
-      isBottomBarOverlay: true,
-      progressIndicator: const HomeLoad(),
-    );
-  }
-
   void _onItemTapped(int index) async {
-    await loading();
     setState(() {
       _selectedIndex = index;
     });
-    Loader.hide();
   }
 
   @override
@@ -46,7 +33,7 @@ class _DashboardScreen extends State<DashboardScreen>
     return Scaffold(
         backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(

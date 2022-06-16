@@ -68,9 +68,9 @@ class AppTheme {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
         appBarTheme: const AppBarTheme(
-          color: Colors.white,
+          color: Colors.black,
         ),
-        popupMenuTheme: const PopupMenuThemeData(color: Colors.white),
+        popupMenuTheme: const PopupMenuThemeData(color: Colors.black),
         primaryColor: primaryColor,
         splashColor: Colors.white.withOpacity(0.1),
         hoverColor: Colors.transparent,
@@ -78,7 +78,7 @@ class AppTheme {
         highlightColor: Colors.transparent,
         canvasColor: HexColor('#1A1F30'),
         scaffoldBackgroundColor: Colors.white,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         errorColor: HexColor("#CA443C"),
         textTheme: _buildTextTheme(base.textTheme),
         platform: TargetPlatform.iOS,

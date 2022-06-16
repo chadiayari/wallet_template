@@ -46,115 +46,111 @@ class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Column(
-          children: [
-            Text(
-              "Let's get started",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryColor),
-                  fontWeight: FontWeight.normal),
-            ),
-            SizedBox(height: size.height * 0.05),
-            const Text("OR"),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RegisterScreen()));
-              },
-              child: Text(
-                "Register manually",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: HexColor(constants.primaryBlue),
-                ),
+      body: Column(
+        children: [
+          Text(
+            "Let's get started",
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                color: HexColor(constants.primaryColor),
+                fontWeight: FontWeight.normal),
+          ),
+          SizedBox(height: size.height * 0.05),
+          const Text("OR"),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegisterScreen()));
+            },
+            child: Text(
+              "Register manually",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: HexColor(constants.primaryBlue),
               ),
             ),
-            const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Checkbox(
-                  checkColor: Colors.white,
-                  fillColor: MaterialStateProperty.resolveWith(getColor),
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value!;
-                    });
-                  },
-                ),
-                Text(
-                  'I agree to the terms and conditions and the Privacy Policy',
-                  style: Theme.of(context).textTheme.caption!.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
-              child: MaterialButton(
-                  minWidth: size.width * 0.4,
-                  height: 50,
-                  color: isChecked
-                      ? HexColor(constants.primaryColor)
-                      : HexColor(constants.primaryColor).withOpacity(0.3),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Text(
-                          "Sign up",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                              color: Colors.white),
-                        ),
-                      ]),
-                  onPressed: () {
-                    isChecked
-                        ? Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const VerifyDetails()))
-                        : null;
-                  }),
-            ),
-            SizedBox(height: size.height * 0.05),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Text(
-                  "Already have an account? ",
-                  style: TextStyle(color: Colors.black),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SigninScreen()));
-                  },
-                  child: Text(
-                    "Sign in",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: HexColor(constants.primaryBlue),
-                    ),
+          ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Checkbox(
+                checkColor: Colors.white,
+                fillColor: MaterialStateProperty.resolveWith(getColor),
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value!;
+                  });
+                },
+              ),
+              Text(
+                'I agree to the terms and conditions and the Privacy Policy',
+                style: Theme.of(context)
+                    .textTheme
+                    .caption!
+                    .copyWith(fontWeight: FontWeight.normal),
+              ),
+            ],
+          ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
+            child: MaterialButton(
+                minWidth: size.width * 0.4,
+                height: 50,
+                color: isChecked
+                    ? HexColor(constants.primaryColor)
+                    : HexColor(constants.primaryColor).withOpacity(0.3),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const <Widget>[
+                      Text(
+                        "Sign up",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white),
+                      ),
+                    ]),
+                onPressed: () {
+                  isChecked
+                      ? Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const VerifyDetails()))
+                      : null;
+                }),
+          ),
+          SizedBox(height: size.height * 0.05),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const Text(
+                "Already have an account? ",
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SigninScreen()));
+                },
+                child: Text(
+                  "Sign in",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: HexColor(constants.primaryBlue),
                   ),
-                )
-              ],
-            ),
-            const Spacer(),
-          ],
-        ),
+                ),
+              )
+            ],
+          ),
+          const Spacer(),
+        ],
       ),
     );
   }
