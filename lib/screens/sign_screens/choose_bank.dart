@@ -24,7 +24,7 @@
 //           leading: IconButton(
 //             icon: Icon(
 //               Icons.arrow_back_outlined,
-//               color: HexColor(constants.primaryRed),
+//               color: HexColor(constants.primaryColor),
 //             ),
 //             onPressed: () {
 //               Navigator.pop(context);
@@ -42,7 +42,7 @@
 //                   Text(
 //                     "Choose your bank",
 //                     style: Theme.of(context).textTheme.headline5!.copyWith(
-//                         color: HexColor(constants.primaryRed),
+//                         color: HexColor(constants.primaryColor),
 //                         fontWeight: FontWeight.normal),
 //                   ),
 //                   SizedBox(height: size.width * 0.03),

@@ -1,20 +1,16 @@
 import 'package:wallet_template/screens/profile_screens/project_screen.dart';
 import 'package:wallet_template/widgets/project_widget.dart';
 import 'package:flutter/material.dart';
-import '../../models/login_user.dart';
-import '../../models/user.dart';
 import '../../widgets/loading.dart';
 
 class ProfileProjects extends StatefulWidget {
   const ProfileProjects({Key? key}) : super(key: key);
   @override
-  _ProfileProjects createState() => _ProfileProjects();
+  State<ProfileProjects> createState() => _ProfileProjects();
 }
 
 class _ProfileProjects extends State<ProfileProjects>
     with WidgetsBindingObserver {
-  LoggedInUser userData = LoggedInUser();
-  User currentuser = User();
   bool loaded = false;
 
   @override
@@ -62,23 +58,10 @@ class _ProfileProjects extends State<ProfileProjects>
                           MaterialPageRoute(
                               builder: (_) => const ProjectScreen()));
                     },
-                    child: ProjectWidget(
-                      ownedShares: currentuser.portfolioId!.ownedShares!.isEmpty
-                          ? "0"
-                          : currentuser
-                              .portfolioId!.ownedShares![0].numberOfOwnedShares
-                              .toString(),
-                      sharesValue: currentuser.portfolioId!.ownedShares!.isEmpty
-                          ? "0"
-                          : currentuser
-                              .portfolioId!.ownedShares![0].totalSharesValue!
-                              .toStringAsFixed(3),
-                      returnPurchase:
-                          currentuser.portfolioId!.ownedShares!.isEmpty
-                              ? "0"
-                              : currentuser.portfolioId!.ownedShares![0]
-                                  .returnOnInvestment
-                                  .toString(),
+                    child: const ProjectWidget(
+                      ownedShares: "0",
+                      sharesValue: "0",
+                      returnPurchase: "0",
                     ),
                   ),
                 ],

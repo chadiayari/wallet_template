@@ -79,7 +79,7 @@ class HomeLoad extends StatelessWidget {
                   const Spacer(),
                   IconWhiteButton(
                       iconName: Icon(Icons.arrow_downward,
-                          color: HexColor(constants.primaryRed)),
+                          color: HexColor(constants.primaryColor)),
                       title: "Purchase",
                       onPressed: () {}),
                   SizedBox(width: size.width * 0.05),

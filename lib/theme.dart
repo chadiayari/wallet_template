@@ -59,7 +59,7 @@ class AppTheme {
   }
 
   static ThemeData lightTheme() {
-    Color primaryColor = HexColor(constants.primaryRed);
+    Color primaryColor = HexColor(constants.primaryColor);
     Color secondaryColor = HexColor(constants.backgroundColor);
     final ColorScheme colorScheme = const ColorScheme.light().copyWith(
       primary: primaryColor,
@@ -93,7 +93,7 @@ class AppTheme {
   }
 
   static ThemeData darkTheme() {
-    Color primaryColor = HexColor(constants.primaryRed);
+    Color primaryColor = HexColor(constants.primaryColor);
     Color secondaryColor = HexColor(constants.backgroundColor);
     final ColorScheme colorScheme = const ColorScheme.light().copyWith(
       primary: primaryColor,
@@ -126,7 +126,7 @@ class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");
     if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
+      hexColor = "FF$hexColor";
     }
     return int.parse(hexColor, radix: 16);
   }

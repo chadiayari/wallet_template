@@ -17,9 +17,10 @@ class RedButton extends StatelessWidget {
       child: MaterialButton(
           minWidth: size.width * 0.4,
           height: 50,
-          color: HexColor(constants.primaryRed),
+          color: HexColor(constants.primaryColor),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          onPressed: onPressed,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -30,8 +31,7 @@ class RedButton extends StatelessWidget {
                       fontSize: 18,
                       color: Colors.white),
                 ),
-              ]),
-          onPressed: onPressed),
+              ])),
     );
   }
 }
@@ -53,9 +53,10 @@ class IconRedButton extends StatelessWidget {
       children: [
         MaterialButton(
             height: 50,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+            onPressed: onPressed,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -67,8 +68,7 @@ class IconRedButton extends StatelessWidget {
                         fontSize: 18,
                         color: Colors.white),
                   ),
-                ]),
-            onPressed: onPressed),
+                ])),
       ],
     );
   }
@@ -92,8 +92,9 @@ class WhiteButton extends StatelessWidget {
           color: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side:
-                  BorderSide(width: 1, color: HexColor(constants.primaryRed))),
+              side: BorderSide(
+                  width: 1, color: HexColor(constants.primaryColor))),
+          onPressed: onPressed,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -102,10 +103,9 @@ class WhiteButton extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: HexColor(constants.primaryRed)),
+                      color: HexColor(constants.primaryColor)),
                 ),
-              ]),
-          onPressed: onPressed),
+              ])),
     );
   }
 }
@@ -128,7 +128,9 @@ class IconWhiteButton extends StatelessWidget {
         color: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
-            side: BorderSide(width: 1, color: HexColor(constants.primaryRed))),
+            side:
+                BorderSide(width: 1, color: HexColor(constants.primaryColor))),
+        onPressed: onPressed,
         child:
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           iconName,
@@ -137,10 +139,9 @@ class IconWhiteButton extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 18,
-                color: HexColor(constants.primaryRed)),
+                color: HexColor(constants.primaryColor)),
           ),
-        ]),
-        onPressed: onPressed);
+        ]));
   }
 }
 
@@ -159,7 +160,9 @@ class SmallIconWhiteButton extends StatelessWidget {
         color: Colors.white,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
-            side: BorderSide(width: 1, color: HexColor(constants.primaryRed))),
+            side:
+                BorderSide(width: 1, color: HexColor(constants.primaryColor))),
+        onPressed: onPressed,
         child:
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           Text(
@@ -167,9 +170,8 @@ class SmallIconWhiteButton extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 10,
-                color: HexColor(constants.primaryRed)),
+                color: HexColor(constants.primaryColor)),
           ),
-        ]),
-        onPressed: onPressed);
+        ]));
   }
 }

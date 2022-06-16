@@ -1,21 +1,16 @@
 import 'package:wallet_template/components/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
-
-import '../../models/login_user.dart';
-import '../../models/user.dart';
 import '../../widgets/loading.dart';
 import '../purchase_screen.dart';
 
 class ProfileProfit extends StatefulWidget {
   const ProfileProfit({Key? key}) : super(key: key);
   @override
-  _ProfileProfit createState() => _ProfileProfit();
+  State<ProfileProfit> createState() => _ProfileProfit();
 }
 
 class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
-  LoggedInUser userData = LoggedInUser();
-  User currentuser = User();
   bool loaded = false;
 
   loading() {
@@ -71,11 +66,7 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                currentuser.portfolioId!.ownedShares!.isEmpty
-                                    ? "0"
-                                    : currentuser.portfolioId!.ownedShares![0]
-                                        .numberOfOwnedShares
-                                        .toString(),
+                                "0",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6!
@@ -126,12 +117,7 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                               Row(
                                 children: [
                                   Text(
-                                    currentuser
-                                            .portfolioId!.ownedShares!.isEmpty
-                                        ? "0"
-                                        : currentuser.portfolioId!
-                                            .ownedShares![0].totalSharesValue!
-                                            .toStringAsFixed(3),
+                                    "0",
                                     style: Theme.of(context)
                                         .textTheme
                                         .headline6!
@@ -198,38 +184,27 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                           ListTile(
                             dense: true,
                             title: Row(
-                              children: [
-                                const Text(
+                              children: const [
+                                Text(
                                   'Amount: ',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser
-                                          .portfolioId!
-                                          .ownedShares![0]
-                                          .purchaseHistory![0]
-                                          .totalPurchasePrice
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
-                                const Text(
+                                Text(
                                   'AED',
                                   style: TextStyle(color: Colors.black),
                                 ),
-                                const Spacer(),
-                                const Text(
+                                Spacer(),
+                                Text(
                                   'Shares number',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser.portfolioId!.ownedShares![0]
-                                          .purchaseHistory![0].numberOfShares
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -250,38 +225,27 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                           ListTile(
                             dense: true,
                             title: Row(
-                              children: [
-                                const Text(
+                              children: const [
+                                Text(
                                   'Amount: ',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser
-                                          .portfolioId!
-                                          .ownedShares![0]
-                                          .purchaseHistory![0]
-                                          .totalPurchasePrice
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
-                                const Text(
+                                Text(
                                   'AED',
                                   style: TextStyle(color: Colors.black),
                                 ),
-                                const Spacer(),
-                                const Text(
+                                Spacer(),
+                                Text(
                                   'Shares number: ',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser.portfolioId!.ownedShares![0]
-                                          .purchaseHistory![0].numberOfShares
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -302,38 +266,27 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                           ListTile(
                             dense: true,
                             title: Row(
-                              children: [
-                                const Text(
+                              children: const [
+                                Text(
                                   'Amount: ',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser
-                                          .portfolioId!
-                                          .ownedShares![0]
-                                          .purchaseHistory![0]
-                                          .totalPurchasePrice
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
-                                const Text(
+                                Text(
                                   'AED',
                                   style: TextStyle(color: Colors.black),
                                 ),
-                                const Spacer(),
-                                const Text(
+                                Spacer(),
+                                Text(
                                   'Shares number: ',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                 Text(
-                                  currentuser.portfolioId!.ownedShares!.isEmpty
-                                      ? "0"
-                                      : currentuser.portfolioId!.ownedShares![0]
-                                          .purchaseHistory![0].numberOfShares
-                                          .toString(),
-                                  style: const TextStyle(color: Colors.black),
+                                  "0",
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ],
                             ),
@@ -388,23 +341,13 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                             right: size.width * 0.04,
                             left: size.width * 0.04),
                         child: Row(
-                          children: [
+                          children: const [
                             Text(
-                              currentuser.portfolioId!.ownedShares!.isEmpty
-                                  ? "Amount: 0"
-                                  : "Amount: " +
-                                      currentuser.portfolioId!.ownedShares![0]
-                                          .totalSharesValue!
-                                          .toStringAsFixed(1),
+                              "0",
                             ),
-                            const Spacer(),
+                            Spacer(),
                             Text(
-                              currentuser.portfolioId!.ownedShares!.isEmpty
-                                  ? "Shares number: 0"
-                                  : "Shares number: " +
-                                      currentuser.portfolioId!.ownedShares![0]
-                                          .numberOfOwnedShares
-                                          .toString(),
+                              "0",
                             ),
                           ],
                         ),

@@ -1,5 +1,4 @@
 import 'package:wallet_template/components/buttons.dart';
-import 'package:wallet_template/models/login_user.dart';
 import 'package:wallet_template/screens/purchase_more_funds.dart';
 import 'package:wallet_template/screens/transfer_screen.dart';
 import 'package:wallet_template/widgets/dashboard_widget.dart';
@@ -9,18 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
-import '../models/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreen createState() => _HomeScreen();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
-  LoggedInUser userData = LoggedInUser();
-  User currentuser = User();
+class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   bool loaded = false;
   Route? route;
 
@@ -52,9 +48,9 @@ class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
                     .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               Text(
-                loaded ? userData.firstName.toString() : "...",
+                "...",
                 style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: HexColor(constants.primaryRed),
+                    color: HexColor(constants.primaryColor),
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -63,7 +59,7 @@ class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
           backgroundColor: HexColor(constants.backgroundColor),
           elevation: 1,
           iconTheme: IconThemeData(
-            color: HexColor(constants.primaryRed), //change your color here
+            color: HexColor(constants.primaryColor), //change your color here
           ),
         ),
         body: loaded == false
@@ -99,11 +95,7 @@ class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                currentuser.portfolioId!.ownedShares!.isNotEmpty
-                                    ? currentuser.portfolioId!.ownedShares![0]
-                                        .numberOfOwnedShares
-                                        .toString()
-                                    : "0",
+                                "0",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline5!
@@ -128,7 +120,7 @@ class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
                               const Spacer(),
                               IconWhiteButton(
                                   iconName: Icon(Icons.arrow_downward,
-                                      color: HexColor(constants.primaryRed)),
+                                      color: HexColor(constants.primaryColor)),
                                   title: "Purchase",
                                   onPressed: () {
                                     Navigator.push(
@@ -158,24 +150,14 @@ class _HomeScreen extends State<HomeScreen> with WidgetsBindingObserver {
                       ),
                     ),
                     SizedBox(height: size.height * 0.08),
-                    DashboardCard(
-                        name: "Purchased Shares",
-                        nbShares: currentuser.numberOfPurchasedShares == 0
-                            ? "0"
-                            : currentuser.numberOfPurchasedShares.toString(),
-                        icon: "Icons"),
-                    DashboardCard(
+                    const DashboardCard(
+                        name: "Purchased Shares", nbShares: "0", icon: "Icons"),
+                    const DashboardCard(
                         name: "Transfered Shares",
-                        nbShares: currentuser.numberOfTransferedShares == 0
-                            ? "0"
-                            : currentuser.numberOfTransferedShares.toString(),
+                        nbShares: "0",
                         icon: "Icons"),
-                    DashboardCard(
-                        name: "Recieved Shares",
-                        nbShares: currentuser.numberOfRecievedShares == 0
-                            ? "0"
-                            : currentuser.numberOfRecievedShares.toString(),
-                        icon: "Icons"),
+                    const DashboardCard(
+                        name: "Recieved Shares", nbShares: "0", icon: "Icons"),
                   ],
                 ),
               ));

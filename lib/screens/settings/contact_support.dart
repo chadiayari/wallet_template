@@ -9,7 +9,7 @@ class ContactSupport extends StatefulWidget {
   const ContactSupport({Key? key}) : super(key: key);
 
   @override
-  _ContactSupport createState() => _ContactSupport();
+  State<ContactSupport> createState() => _ContactSupport();
 }
 
 class _ContactSupport extends State<ContactSupport>
@@ -36,7 +36,7 @@ class _ContactSupport extends State<ContactSupport>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -54,7 +54,7 @@ class _ContactSupport extends State<ContactSupport>
             Text(
               "Contact Support",
               style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             SizedBox(height: size.width * 0.1),

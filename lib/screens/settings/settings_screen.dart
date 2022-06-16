@@ -1,4 +1,3 @@
-import 'package:wallet_template/models/login_user.dart';
 import 'package:wallet_template/screens/settings/change_password.dart';
 import 'package:wallet_template/screens/settings/contact_support.dart';
 import 'package:wallet_template/screens/settings/edit_profile.dart';
@@ -14,13 +13,12 @@ class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
 
   @override
-  _SettingsScreen createState() => _SettingsScreen();
+  State<SettingsScreen> createState() => _SettingsScreen();
 }
 
 class _SettingsScreen extends State<SettingsScreen>
     with WidgetsBindingObserver {
   bool notifications = true;
-  LoggedInUser userData = LoggedInUser();
 
   @override
   void initState() {
@@ -38,7 +36,7 @@ class _SettingsScreen extends State<SettingsScreen>
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -56,7 +54,7 @@ class _SettingsScreen extends State<SettingsScreen>
                 child: Text(
                   "Settings",
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                       fontWeight: FontWeight.normal),
                 ),
               ),
@@ -114,8 +112,10 @@ class _SettingsScreen extends State<SettingsScreen>
               SettingsWidget(
                   title: "Edit Profile",
                   ontap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EditProfile()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EditProfile()));
                   }),
               SettingsWidget(
                   title: "Change Password",
@@ -123,7 +123,7 @@ class _SettingsScreen extends State<SettingsScreen>
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ChangePassword()));
+                            builder: (context) => const ChangePassword()));
                   }),
               Container(
                 padding: EdgeInsets.only(

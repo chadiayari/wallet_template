@@ -8,7 +8,7 @@ class LanguageScreen extends StatefulWidget {
   const LanguageScreen({Key? key}) : super(key: key);
 
   @override
-  _LanguageScreen createState() => _LanguageScreen();
+  State<LanguageScreen> createState() => _LanguageScreen();
 }
 
 enum SingingCharacter { english, arabic }
@@ -39,7 +39,7 @@ class _LanguageScreen extends State<LanguageScreen>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -57,7 +57,7 @@ class _LanguageScreen extends State<LanguageScreen>
             Text(
               "Select language",
               style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             SizedBox(height: size.width * 0.1),
@@ -77,7 +77,7 @@ class _LanguageScreen extends State<LanguageScreen>
                   leading: Radio<SingingCharacter>(
                     value: SingingCharacter.english,
                     groupValue: _character,
-                    activeColor: HexColor(constants.primaryRed),
+                    activeColor: HexColor(constants.primaryColor),
                     onChanged: (SingingCharacter? value) {
                       setState(() {
                         _character = value;

@@ -1,5 +1,4 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/screens/sign_screens/referral_screen.dart';
 import 'package:wallet_template/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
@@ -11,7 +10,7 @@ class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  _RegisterScreen createState() => _RegisterScreen();
+  State<RegisterScreen> createState() => _RegisterScreen();
 }
 
 class _RegisterScreen extends State<RegisterScreen>
@@ -79,7 +78,7 @@ class _RegisterScreen extends State<RegisterScreen>
       if (states.any(interactiveStates.contains)) {
         return HexColor(constants.primaryBlue);
       }
-      return HexColor(constants.primaryRed);
+      return HexColor(constants.primaryColor);
     }
 
     return Scaffold(
@@ -89,7 +88,7 @@ class _RegisterScreen extends State<RegisterScreen>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -103,7 +102,7 @@ class _RegisterScreen extends State<RegisterScreen>
           child: Text(
             "Register Manually",
             style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryRed),
+                color: HexColor(constants.primaryColor),
                 fontWeight: FontWeight.normal),
           ),
         ),
@@ -248,7 +247,7 @@ class _RegisterScreen extends State<RegisterScreen>
                   child: DropdownButton<String>(
                     icon: Icon(
                       Icons.keyboard_arrow_down,
-                      color: HexColor(constants.primaryRed),
+                      color: HexColor(constants.primaryColor),
                     ),
                     isDense: true,
                     value: dropdownValue,
@@ -344,8 +343,8 @@ class _RegisterScreen extends State<RegisterScreen>
             minWidth: size.width * 0.4,
             height: 50,
             color: isChecked
-                ? HexColor(constants.primaryRed)
-                : HexColor(constants.primaryRed).withOpacity(0.3),
+                ? HexColor(constants.primaryColor)
+                : HexColor(constants.primaryColor).withOpacity(0.3),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             child: Row(
@@ -363,17 +362,6 @@ class _RegisterScreen extends State<RegisterScreen>
               setState(() {
                 loading();
               });
-              Map data = {
-                "email": emailController.text,
-                "password": passwordController.text,
-                "firstName": firstNameController.text,
-                "lastName": secondNameConntroller.text,
-                "phoneNumber": phoneController.text,
-                "address": addressController.text,
-                "gender": dropdownValue,
-                "emiratesId": emiratesIdController.text,
-                "isAdmin": false
-              };
 
               try {} catch (error) {
                 Loader.hide();

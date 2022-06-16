@@ -8,7 +8,7 @@ class TermsConditions extends StatefulWidget {
   const TermsConditions({Key? key}) : super(key: key);
 
   @override
-  _TermsConditions createState() => _TermsConditions();
+  State<TermsConditions> createState() => _TermsConditions();
 }
 
 enum SingingCharacter { english, arabic }
@@ -37,7 +37,7 @@ class _TermsConditions extends State<TermsConditions>
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -57,7 +57,7 @@ class _TermsConditions extends State<TermsConditions>
               child: Text(
                 "Terms and conditions",
                 style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: HexColor(constants.primaryRed),
+                    color: HexColor(constants.primaryColor),
                     fontWeight: FontWeight.normal),
               ),
             ),

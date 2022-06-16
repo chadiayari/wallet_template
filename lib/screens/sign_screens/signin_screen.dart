@@ -1,5 +1,5 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/screens/dashboard_screen.dart';
+import 'package:wallet_template/screens/home_screen.dart';
 import 'package:wallet_template/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
@@ -10,7 +10,7 @@ class SigninScreen extends StatefulWidget {
   const SigninScreen({Key? key}) : super(key: key);
 
   @override
-  _SigninScreen createState() => _SigninScreen();
+  State<SigninScreen> createState() => _SigninScreen();
 }
 
 class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
@@ -51,7 +51,7 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -72,7 +72,7 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                     child: Text(
                       "Sign in",
                       style: Theme.of(context).textTheme.headline5!.copyWith(
-                          color: HexColor(constants.primaryRed),
+                          color: HexColor(constants.primaryColor),
                           fontWeight: FontWeight.normal),
                     ),
                   ),
@@ -174,8 +174,8 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                       minWidth: size.width * 0.4,
                       height: 50,
                       color: (emailHasValue && passwordHasValue)
-                          ? HexColor(constants.primaryRed)
-                          : HexColor(constants.primaryRed).withOpacity(0.3),
+                          ? HexColor(constants.primaryColor)
+                          : HexColor(constants.primaryColor).withOpacity(0.3),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: Row(
@@ -193,15 +193,11 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                         setState(() {
                           loading();
                         });
-
-                        try {} catch (error) {
-                          Loader.hide();
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Login incorrect'),
-                            ),
-                          );
-                        }
+                        Loader.hide();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const HomeScreen()));
                       },
                     ),
                   ),

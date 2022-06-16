@@ -58,7 +58,7 @@ class DashboardCard extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Text(nbShares.toString() + " Shares")
+          Text("$nbShares Shares")
         ],
       ),
     );

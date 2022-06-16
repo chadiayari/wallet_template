@@ -9,7 +9,7 @@ class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
-  _WelcomeScreen createState() => _WelcomeScreen();
+  State<WelcomeScreen> createState() => _WelcomeScreen();
 }
 
 class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
@@ -30,7 +30,7 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
               image: const DecorationImage(
                   fit: BoxFit.fitWidth,
                   image: AssetImage("assets/images/mainimage.jpg")),
-              color: HexColor(constants.primaryRed),
+              color: HexColor(constants.primaryColor),
               borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(150),
                   bottomRight: Radius.circular(150)),
@@ -40,7 +40,7 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
           Text(
             "Welcome to",
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                color: HexColor(constants.primaryRed),
+                color: HexColor(constants.primaryColor),
                 fontWeight: FontWeight.normal),
           ),
           SizedBox(height: size.height * 0.03),
@@ -50,7 +50,7 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
               child: Text(
                 "Abu Dhabi Community Cooperative",
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    color: HexColor(constants.primaryRed),
+                    color: HexColor(constants.primaryColor),
                     fontWeight: FontWeight.normal),
               ),
             ),

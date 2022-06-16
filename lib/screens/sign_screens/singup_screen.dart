@@ -9,7 +9,7 @@ class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  _SignupScreen createState() => _SignupScreen();
+  State<SignupScreen> createState() => _SignupScreen();
 }
 
 class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
@@ -27,7 +27,7 @@ class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
       if (states.any(interactiveStates.contains)) {
         return HexColor(constants.primaryBlue);
       }
-      return HexColor(constants.primaryRed);
+      return HexColor(constants.primaryColor);
     }
 
     return Scaffold(
@@ -37,7 +37,7 @@ class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryRed),
+            color: HexColor(constants.primaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -55,7 +55,7 @@ class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
             Text(
               "Let's get started",
               style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryRed),
+                  color: HexColor(constants.primaryColor),
                   fontWeight: FontWeight.normal),
             ),
             Padding(
@@ -137,8 +137,8 @@ class _SignupScreen extends State<SignupScreen> with WidgetsBindingObserver {
                   minWidth: size.width * 0.4,
                   height: 50,
                   color: isChecked
-                      ? HexColor(constants.primaryRed)
-                      : HexColor(constants.primaryRed).withOpacity(0.3),
+                      ? HexColor(constants.primaryColor)
+                      : HexColor(constants.primaryColor).withOpacity(0.3),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   child: Row(
