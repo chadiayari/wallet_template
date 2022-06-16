@@ -38,7 +38,6 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          decoration: const BoxDecoration(color: Colors.white),
           child: ListView(
             children: [
               Center(
@@ -53,8 +52,10 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                 padding: EdgeInsets.symmetric(vertical: size.width * 0.05),
                 child: Text(
                   "How many shares to purchase?",
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.normal),
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle1!
+                      .copyWith(fontWeight: FontWeight.normal),
                 ),
               ),
               Padding(
@@ -96,14 +97,18 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                   alignment: Alignment.topLeft,
                   child: Text(
                     '* One share costs 10.00AED.',
-                    style: Theme.of(context).textTheme.caption!.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.normal),
+                    style: Theme.of(context)
+                        .textTheme
+                        .caption!
+                        .copyWith(fontWeight: FontWeight.normal),
                   ),
                 ),
                 Text(
                   'The value of the share is determined by the Board meeting at the end of each year.',
-                  style: Theme.of(context).textTheme.caption!.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.normal),
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption!
+                      .copyWith(fontWeight: FontWeight.normal),
                 ),
               ]),
               Container(
@@ -126,8 +131,10 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                 ),
               ),
               Text("* This amount includes 200.00AED for sybscription fees.",
-                  style: Theme.of(context).textTheme.caption!.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.normal)),
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption!
+                      .copyWith(fontWeight: FontWeight.normal)),
               SizedBox(
                 height: size.height * 0.1,
               ),

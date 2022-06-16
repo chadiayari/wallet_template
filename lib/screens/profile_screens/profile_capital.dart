@@ -1,6 +1,5 @@
 import 'package:wallet_template/widgets/capital_widget.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/loading.dart';
 
 class ProfileCapital extends StatefulWidget {
   const ProfileCapital({Key? key}) : super(key: key);
@@ -10,59 +9,49 @@ class ProfileCapital extends StatefulWidget {
 
 class _ProfileCapital extends State<ProfileCapital>
     with WidgetsBindingObserver {
-  bool loaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return loaded == false
-        ? const Load()
-        : Transform.translate(
-            offset: Offset(0.0, -size.width * 0.2),
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Shares Capital Summary",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.02,
-                  ),
-                  const CapitalWidget(
-                      ownedShares: "0", sharesValue: "0", sharesCapital: "0"),
-                  SizedBox(
-                    height: size.height * 0.02,
-                  ),
-                  const Text(
-                    "Current Profits Total",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.02,
-                  ),
-                  const ProfitWidget(
-                      totalRop: "0", totalRol: "0", totalEarning: "0")
-                ],
-              ),
+    return Transform.translate(
+      offset: Offset(0.0, -size.width * 0.2),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Shares Capital Summary",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
-          );
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            const CapitalWidget(
+                ownedShares: "0", sharesValue: "0", sharesCapital: "0"),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            const Text(
+              "Current Profits Total",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            const ProfitWidget(totalRop: "0", totalRol: "0", totalEarning: "0")
+          ],
+        ),
+      ),
+    );
   }
 }

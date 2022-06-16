@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-var backgroundColor = '#FEF2DF';
+var backgroundColor = '#0E030';
 var primaryColor = '#dc965a';
 var primaryBlue = '#005676';
-var primaryOrange = '#D47829';
-var priaryYellow = '#FBAC30';
+var primaryOrange = '#000';
+var priaryYellow = '#000';
 
 BoxDecoration backgroundGradientStyle = const BoxDecoration(
     gradient: LinearGradient(

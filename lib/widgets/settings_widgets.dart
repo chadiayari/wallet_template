@@ -26,7 +26,7 @@ class SettingsWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.black.withOpacity(0.25),
+              color: Colors.white.withOpacity(0.25),
               blurRadius: 6,
             ),
           ],
@@ -49,7 +49,7 @@ class SettingsWidget extends StatelessWidget {
                     Text(
                       title,
                       style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.normal),
+                          color: Colors.white, fontWeight: FontWeight.normal),
                     ),
                     const Spacer(),
                     const Icon(Icons.arrow_right),

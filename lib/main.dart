@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Abu Dhabi community cooperative تعاونية أبوظبي المجتمعية',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData.dark(),
         home: const WelcomeScreen());
   }
 }

@@ -22,21 +22,9 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
         color: HexColor(constants.backgroundColor),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: size.height * 0.3,
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                  fit: BoxFit.fitWidth,
-                  image: AssetImage("assets/images/mainimage.jpg")),
-              color: HexColor(constants.primaryColor),
-              borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(150),
-                  bottomRight: Radius.circular(150)),
-            ),
-          ),
-          SizedBox(height: size.height * 0.1),
           Text(
             "Welcome to",
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
@@ -48,8 +36,8 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
             width: size.width * 0.9,
             child: Center(
               child: Text(
-                "Abu Dhabi Community Cooperative",
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                "Wallet Template",
+                style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: HexColor(constants.primaryColor),
                     fontWeight: FontWeight.normal),
               ),

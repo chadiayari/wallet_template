@@ -1,7 +1,5 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/widgets/loading.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import '../../constants.dart' as constants;
@@ -36,15 +34,6 @@ class _RegisterScreen extends State<RegisterScreen>
     setState(() {
       _selectedDate = args.value.toString();
     });
-  }
-
-  loading() {
-    Loader.show(
-      context,
-      isAppbarOverlay: true,
-      isBottomBarOverlay: true,
-      progressIndicator: const Load(),
-    );
   }
 
   datePopup() {
@@ -348,20 +337,7 @@ class _RegisterScreen extends State<RegisterScreen>
                         color: Colors.white),
                   ),
                 ]),
-            onPressed: () async {
-              setState(() {
-                loading();
-              });
-
-              try {} catch (error) {
-                Loader.hide();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Error creating profile'),
-                  ),
-                );
-              }
-            },
+            onPressed: () {},
           ),
         ),
       ]),

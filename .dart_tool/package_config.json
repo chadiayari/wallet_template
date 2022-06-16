@@ -80,12 +80,6 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "flutter_overlay_loader",
-      "rootUri": "file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_overlay_loader-2.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_test",
       "rootUri": "file:///Users/chadiayari/development/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -314,7 +308,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-15T18:15:03.877918Z",
+  "generated": "2022-06-16T13:04:51.029476Z",
   "generator": "pub",
   "generatorVersion": "2.17.3"
 }
