@@ -1,0 +1,11 @@
+framework module hexcolor {
+  umbrella header "hexcolor-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module hexcolor.Swift {
+    header "hexcolor-Swift.h"
+    requires objc
+}

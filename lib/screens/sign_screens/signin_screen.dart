@@ -1,8 +1,8 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
+import '../dashboard_screen.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({Key? key}) : super(key: key);
@@ -117,8 +117,8 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                     ),
                   ]),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const HomeScreen()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (_) => const DashboardScreen()));
               },
             ),
           ),

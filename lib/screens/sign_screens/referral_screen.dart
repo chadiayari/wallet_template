@@ -106,8 +106,8 @@ class _ReferralScreen extends State<ReferralScreen> {
                         },
                         obscureText: false,
                         controller: referralController,
-                        cursorColor: Colors.black,
-                        style: const TextStyle(color: Colors.black),
+                        cursorColor: Colors.white,
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                           fillColor: Colors.white,
                           focusedBorder: UnderlineInputBorder(
@@ -121,8 +121,6 @@ class _ReferralScreen extends State<ReferralScreen> {
                                   : (dropdownValue == 'Hoot.ae'
                                       ? "Please enter your Hoot account email"
                                       : "")),
-                          hintStyle:
-                              TextStyle(color: Colors.black.withOpacity(0.3)),
                         ),
                       )
                     : const Text(" ")),

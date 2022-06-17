@@ -12,7 +12,7 @@ BoxDecoration backgroundGradientStyle = const BoxDecoration(
   end: Alignment.bottomCenter,
   stops: [0.5, 1],
   colors: <Color>[
-    Color(0xFF1A1F30),
-    Color(0xFF0D4349),
+    Color(0xFF303030),
+    Color.fromARGB(255, 64, 68, 82),
   ],
 ));

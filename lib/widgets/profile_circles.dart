@@ -21,7 +21,7 @@ class ProfileCircle extends StatelessWidget {
       child: RawMaterialButton(
         onPressed: onPressed,
         elevation: 0.0,
-        fillColor: isSelected ? HexColor(constants.primaryColor) : Colors.white,
+        fillColor: isSelected ? HexColor(constants.primaryColor) : Colors.grey,
         padding: EdgeInsets.all(size.width * 0.03),
         shape: (RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
@@ -35,9 +35,7 @@ class ProfileCircle extends StatelessWidget {
               child: Text(
                 name,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                    color: isSelected
-                        ? Colors.white
-                        : HexColor(constants.primaryColor),
+                    color: isSelected ? Colors.white : Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: size.width * 0.03),
               ),

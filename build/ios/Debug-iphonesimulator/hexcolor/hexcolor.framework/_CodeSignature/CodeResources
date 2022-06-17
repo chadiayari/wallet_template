@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pR+MRipvqfIlDMySbseWIuV9jfk=
+		03Ng6c0iiLd6iO1683+lXV5JWGQ=
 		</data>
 		<key>Modules/hexcolor.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
@@ -77,10 +77,6 @@
 	<dict>
 		<key>Headers/HexcolorPlugin.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			oREmotbvss6jpbyTN3AhrpiDV8w=
-			</data>
 			<key>hash2</key>
 			<data>
 			WnGo5oIj+UFGCAfkLPmQArMvZlXUj14bS/t3FeIuYvw=
@@ -88,10 +84,6 @@
 		</dict>
 		<key>Headers/hexcolor-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+K0WIsaJusMQFxfUzDRriMjoDNk=
-			</data>
 			<key>hash2</key>
 			<data>
 			N1gdziTxiqzkJY9pjhxuQfmw0VJ2HRLHR7tW3XGWNg0=
@@ -99,10 +91,6 @@
 		</dict>
 		<key>Headers/hexcolor-umbrella.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			BvYHESuAlsj4fRJN3eJmX7xkVG8=
-			</data>
 			<key>hash2</key>
 			<data>
 			oLdH/O89FoCFUm8kPDgVaoBrdunbjXqwpyULkkuubfI=
@@ -110,10 +98,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			n7YRbSvBwCd/1aS+NsVOZaxb0cs=
-			</data>
 			<key>hash2</key>
 			<data>
 			W9BuLzLenpULdFzgbWPlAaXXmz4/HnNboxOGLgeUrF0=
@@ -121,10 +105,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			n7YRbSvBwCd/1aS+NsVOZaxb0cs=
-			</data>
 			<key>hash2</key>
 			<data>
 			W9BuLzLenpULdFzgbWPlAaXXmz4/HnNboxOGLgeUrF0=
@@ -132,10 +112,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			A6gXMkdLYnSGWfNHFZ4vFYhcJsg=
-			</data>
 			<key>hash2</key>
 			<data>
 			Rt4QnpCglBh6B8BtiYh3CdYX1h6rzlrAyFponX5FNWs=
@@ -143,10 +119,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			A6gXMkdLYnSGWfNHFZ4vFYhcJsg=
-			</data>
 			<key>hash2</key>
 			<data>
 			Rt4QnpCglBh6B8BtiYh3CdYX1h6rzlrAyFponX5FNWs=
@@ -154,10 +126,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			z1JlxBBFQxUZlcFjsakf6p9bXfA=
-			</data>
 			<key>hash2</key>
 			<data>
 			B0yjm/Mq4xaL1hQ4bG08f0m+y5euXyRAbTaDOLDMD8k=
@@ -165,10 +133,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			jPQvXMpoGIs/rk8ZlWiaQ8a5u+0=
-			</data>
 			<key>hash2</key>
 			<data>
 			9ineUgIKjRbIApFNeF6LlTNwNpvlmEPH1oV4SJfx5t4=
@@ -176,10 +140,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/arm64.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			z1JlxBBFQxUZlcFjsakf6p9bXfA=
-			</data>
 			<key>hash2</key>
 			<data>
 			B0yjm/Mq4xaL1hQ4bG08f0m+y5euXyRAbTaDOLDMD8k=
@@ -187,10 +147,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/arm64.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			jPQvXMpoGIs/rk8ZlWiaQ8a5u+0=
-			</data>
 			<key>hash2</key>
 			<data>
 			9ineUgIKjRbIApFNeF6LlTNwNpvlmEPH1oV4SJfx5t4=
@@ -198,10 +154,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3iWtiAXzmW2KcxxvvOYFyKDSlBQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			Is3HahEasbt8Mog39ut0xUE8r+LZDFzdmnJYkxM2gKc=
@@ -209,10 +161,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IM0bO1f/kfSOevEvXpfDfCGtOFM=
-			</data>
 			<key>hash2</key>
 			<data>
 			CLCAtUvZmIbvLzwJV+Hyv3z7OI42wxSaq7EriA8dKQs=
@@ -220,10 +168,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3iWtiAXzmW2KcxxvvOYFyKDSlBQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			Is3HahEasbt8Mog39ut0xUE8r+LZDFzdmnJYkxM2gKc=
@@ -231,10 +175,6 @@
 		</dict>
 		<key>Modules/hexcolor.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			IM0bO1f/kfSOevEvXpfDfCGtOFM=
-			</data>
 			<key>hash2</key>
 			<data>
 			CLCAtUvZmIbvLzwJV+Hyv3z7OI42wxSaq7EriA8dKQs=
@@ -242,10 +182,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Q+hpKztQbw4vzrdf6cF7iCUMlKc=
-			</data>
 			<key>hash2</key>
 			<data>
 			5JpnrJFwq98j9Pyx3qPnf6hjn0Cn9Jsu15KtlGiFprI=

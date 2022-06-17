@@ -1,6 +1,4 @@
-import 'package:wallet_template/components/buttons.dart';
 import 'package:flutter/material.dart';
-import '../purchase_screen.dart';
 
 class ProfileProfit extends StatefulWidget {
   const ProfileProfit({Key? key}) : super(key: key);
@@ -24,11 +22,11 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                 right: 12,
                 left: 12),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.grey,
               borderRadius: BorderRadius.circular(15),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.white.withOpacity(0.25),
                   blurRadius: 6,
                 ),
               ],
@@ -56,15 +54,6 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                         ),
                       ],
                     ),
-                    const Spacer(),
-                    SmallIconWhiteButton(
-                        title: "+ Purchase",
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const PurchaseScreen()));
-                        })
                   ],
                 ),
                 const Divider(
@@ -72,7 +61,7 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                   thickness: 1,
                   indent: 0,
                   endIndent: 0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 Row(
                   children: [
@@ -116,8 +105,7 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
           offset: Offset(-size.width * 0.33, -size.width * 0.1),
           child: const Text(
             "My Capital",
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
         ),
         Transform.translate(
@@ -129,11 +117,11 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                 top: size.width * 0.03,
                 bottom: size.width * 0.05),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.grey,
               borderRadius: BorderRadius.circular(15),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.white.withOpacity(0.25),
                   blurRadius: 6,
                 ),
               ],
@@ -141,14 +129,12 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
             child: Column(
               children: [
                 ExpansionTile(
-                  collapsedIconColor: Colors.black,
-                  iconColor: Colors.black,
+                  collapsedIconColor: Colors.white,
+                  iconColor: Colors.white,
                   title: const Text(
                     'Current Year',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
                   ),
                   children: [
                     ListTile(
@@ -157,24 +143,19 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                         children: const [
                           Text(
                             'Amount: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             'AED',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Spacer(),
                           Text(
                             'Shares number',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
@@ -182,14 +163,12 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                   ],
                 ),
                 ExpansionTile(
-                  collapsedIconColor: Colors.black,
-                  iconColor: Colors.black,
+                  collapsedIconColor: Colors.white,
+                  iconColor: Colors.blue,
                   title: const Text(
                     '2021',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
                   ),
                   children: [
                     ListTile(
@@ -198,24 +177,19 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                         children: const [
                           Text(
                             'Amount: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             'AED',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Spacer(),
                           Text(
                             'Shares number: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
@@ -223,14 +197,12 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                   ],
                 ),
                 ExpansionTile(
-                  collapsedIconColor: Colors.black,
-                  iconColor: Colors.black,
+                  collapsedIconColor: Colors.white,
+                  iconColor: Colors.white,
                   title: const Text(
                     '2020',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
                   ),
                   children: [
                     ListTile(
@@ -239,24 +211,19 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                         children: const [
                           Text(
                             'Amount: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             'AED',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Spacer(),
                           Text(
                             'Shares number: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             "0",
-                            style: TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
@@ -264,14 +231,12 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                   ],
                 ),
                 ExpansionTile(
-                  collapsedIconColor: Colors.black,
-                  iconColor: Colors.black,
+                  collapsedIconColor: Colors.white,
+                  iconColor: Colors.white,
                   title: const Text(
                     '2019',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18),
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
                   ),
                   children: [
                     ListTile(
@@ -280,24 +245,19 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                         children: const [
                           Text(
                             'Amount: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             '1000.00',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             'AED',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Spacer(),
                           Text(
                             'Shares number: ',
-                            style: TextStyle(color: Colors.black),
                           ),
                           Text(
                             '300',
-                            style: TextStyle(color: Colors.black),
                           ),
                         ],
                       ),

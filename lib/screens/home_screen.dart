@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             ],
           ),
           shadowColor: Colors.transparent,
-          backgroundColor: HexColor(constants.backgroundColor),
+          backgroundColor: Colors.grey,
           elevation: 1,
           iconTheme: IconThemeData(
             color: HexColor(constants.primaryColor),
@@ -51,10 +51,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         body: ListView(
           children: [
             Container(
-              height: size.height * 0.35,
-              decoration: BoxDecoration(
-                color: HexColor(constants.backgroundColor),
-                borderRadius: const BorderRadius.only(
+              height: size.height * 0.3,
+              decoration: const BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(100),
                     bottomRight: Radius.circular(100)),
               ),

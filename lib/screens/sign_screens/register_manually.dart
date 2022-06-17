@@ -2,6 +2,7 @@ import 'package:wallet_template/components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:wallet_template/screens/sign_screens/referral_screen.dart';
 import '../../constants.dart' as constants;
 
 class RegisterScreen extends StatefulWidget {
@@ -278,7 +279,7 @@ class _RegisterScreen extends State<RegisterScreen>
           padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
           child: MaterialButton(
             height: 50,
-            color: Colors.white,
+            color: Colors.grey,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             child: const Text(
@@ -312,7 +313,7 @@ class _RegisterScreen extends State<RegisterScreen>
               style: Theme.of(context)
                   .textTheme
                   .caption!
-                  .copyWith(color: Colors.black, fontWeight: FontWeight.normal),
+                  .copyWith(fontWeight: FontWeight.normal),
             ),
           ],
         ),
@@ -337,7 +338,10 @@ class _RegisterScreen extends State<RegisterScreen>
                         color: Colors.white),
                   ),
                 ]),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const ReferralScreen()));
+            },
           ),
         ),
       ]),

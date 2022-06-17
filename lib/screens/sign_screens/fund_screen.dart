@@ -1,6 +1,7 @@
-import 'package:wallet_template/screens/sign_screens/payement_screen.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:wallet_template/screens/sign_screens/signin_screen.dart';
 import '../../constants.dart' as constants;
 
 class FundScreen extends StatefulWidget {
@@ -15,6 +16,73 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
   double totalPay2 = 0.00;
   double shareValue = 10.00;
   bool hasValue = false;
+
+  payPopup() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: AlertDialog(
+              backgroundColor: Colors.transparent,
+              content: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: HexColor(constants.primaryColor)),
+                padding: const EdgeInsets.all(15),
+                height: 250,
+                width: 250,
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.check_circle,
+                        color: Colors.black,
+                        size: 55,
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                        "Payement Success",
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.normal),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      MaterialButton(
+                          minWidth: 15,
+                          height: 30,
+                          color: Colors.black,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "Continue",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      color: HexColor(constants.primaryColor)),
+                                ),
+                              ]),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const SigninScreen()));
+                          }),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,8 +143,8 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                       }
                     }),
                     controller: sharesController,
-                    cursorColor: Colors.black,
-                    style: TextStyle(color: HexColor(constants.primaryColor)),
+                    cursorColor: Colors.white,
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         borderSide:
@@ -85,9 +153,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                       ),
                       hintText: "0.0",
                       border: const UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)),
-                      hintStyle:
-                          TextStyle(color: Colors.black.withOpacity(0.3)),
+                          borderSide: BorderSide(color: Colors.white)),
                     ),
                   ),
                 ),
@@ -160,12 +226,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                           ),
                         ]),
                     onPressed: () async {
-                      hasValue
-                          ? Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const PayementScreen()))
-                          : null;
+                      payPopup();
                     }),
               ),
             ],

@@ -74,7 +74,7 @@ class _PurchaseMoreScreen extends State<PurchaseMoreScreen>
                     }
                   }),
                   controller: sharesController,
-                  cursorColor: Colors.black,
+                  cursorColor: Colors.white,
                   style: TextStyle(color: HexColor(constants.primaryColor)),
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -84,8 +84,7 @@ class _PurchaseMoreScreen extends State<PurchaseMoreScreen>
                     ),
                     hintText: "0.0",
                     border: const UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+                        borderSide: BorderSide(color: Colors.white)),
                   ),
                 ),
               ),

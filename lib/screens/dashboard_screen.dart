@@ -33,7 +33,7 @@ class _DashboardScreen extends State<DashboardScreen>
     return Scaffold(
         backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.grey,
           showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(
@@ -105,7 +105,7 @@ class RadiantGradientMask extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 5, bottom: 12, right: 5, left: 5),
         decoration: BoxDecoration(
-          color: HexColor(constants.backgroundColor),
+          color: HexColor(constants.primaryColor),
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),
