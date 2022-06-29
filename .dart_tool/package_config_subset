@@ -66,10 +66,6 @@ http_parser
 2.12
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib/
-intl
-2.12
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib/
 js
 2.16
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/
@@ -150,14 +146,6 @@ string_scanner
 2.12
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0/lib/
-syncfusion_flutter_core
-2.12
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-20.1.60/
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-20.1.60/lib/
-syncfusion_flutter_datepicker
-2.12
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_datepicker-20.1.60/
-file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_datepicker-20.1.60/lib/
 term_glyph
 2.12
 file:///Users/chadiayari/development/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0/

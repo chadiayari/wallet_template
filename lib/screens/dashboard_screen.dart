@@ -33,7 +33,7 @@ class _DashboardScreen extends State<DashboardScreen>
     return Scaffold(
         backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.grey,
+          backgroundColor: Color(0xFF8A99A7),
           showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(

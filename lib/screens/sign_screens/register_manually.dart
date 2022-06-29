@@ -1,7 +1,6 @@
 import 'package:wallet_template/components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:wallet_template/screens/sign_screens/referral_screen.dart';
 import '../../constants.dart' as constants;
 
@@ -14,47 +13,14 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreen extends State<RegisterScreen>
     with WidgetsBindingObserver {
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController secondNameConntroller = TextEditingController();
-  final TextEditingController adccNbController = TextEditingController();
-  final TextEditingController emiratesIdController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController prfPhoneController = TextEditingController();
+  final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
-  final TextEditingController prfEmailController = TextEditingController();
-  final TextEditingController expiryController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
+
   bool isChecked = false;
   String dropdownValue = 'Male';
-  String _selectedDate = '';
-
-  void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
-    setState(() {
-      _selectedDate = args.value.toString();
-    });
-  }
-
-  datePopup() {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 50),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-            ),
-            child: SfDateRangePicker(
-              onSelectionChanged: _onSelectionChanged,
-              selectionMode: DateRangePickerSelectionMode.single,
-            ),
-          );
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +40,12 @@ class _RegisterScreen extends State<RegisterScreen>
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
+        title: Text(
+          "Sign up",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
@@ -88,20 +60,12 @@ class _RegisterScreen extends State<RegisterScreen>
         elevation: 0.0,
       ),
       body: ListView(children: [
-        Center(
-          child: Text(
-            "Register Manually",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
-          ),
-        ),
         SizedBox(height: size.height * 0.04),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
           child: Align(
             alignment: Alignment.topLeft,
-            child: Text("First Name"),
+            child: Text("Full Name"),
           ),
         ),
         Padding(
@@ -111,24 +75,8 @@ class _RegisterScreen extends State<RegisterScreen>
             pwd: false,
             hintText: "-----",
             onPressed: () {},
-            inputController: firstNameController,
+            inputController: fullNameController,
           ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text("Last Name"),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: size.width * 0.05),
-          child: LoginInputField(
-              onChanged: (value) {},
-              pwd: false,
-              hintText: "-----",
-              onPressed: () {},
-              inputController: secondNameConntroller),
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
@@ -145,38 +93,6 @@ class _RegisterScreen extends State<RegisterScreen>
               hintText: "-----",
               onPressed: () {},
               inputController: emailController),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text("EMIRATES ID Number"),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: size.width * 0.05),
-          child: LoginInputField(
-              onChanged: (value) {},
-              pwd: false,
-              hintText: "-----",
-              onPressed: () {},
-              inputController: emiratesIdController),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text("Address"),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: size.width * 0.05),
-          child: LoginInputField(
-              onChanged: (value) {},
-              pwd: false,
-              hintText: "-----",
-              onPressed: () {},
-              inputController: addressController),
         ),
         const Padding(
           padding: EdgeInsets.only(left: 20.0),
@@ -252,49 +168,6 @@ class _RegisterScreen extends State<RegisterScreen>
                 ),
               );
             })),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text("Phone number"),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: size.width * 0.05),
-          child: LoginInputField(
-              onChanged: (value) {},
-              pwd: false,
-              hintText: "xxxxx",
-              onPressed: () {},
-              inputController: phoneController),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: Text("Date of Expiry"),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-          child: MaterialButton(
-            height: 50,
-            color: Colors.grey,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: const Text(
-              "Select date",
-              style: TextStyle(fontSize: 14, color: Colors.black),
-            ),
-            onPressed: () {
-              datePopup();
-            },
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: size.width * 0.05),
-          child: Text(_selectedDate),
-        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

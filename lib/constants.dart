@@ -4,7 +4,7 @@ var backgroundColor = '#0E030';
 var primaryColor = '#dc965a';
 var primaryBlue = '#005676';
 var primaryOrange = '#000';
-var priaryYellow = '#000';
+var blue = '#8A99A7';
 
 BoxDecoration backgroundGradientStyle = const BoxDecoration(
     gradient: LinearGradient(

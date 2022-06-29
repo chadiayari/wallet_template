@@ -19,17 +19,22 @@ class DashboardCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      padding: EdgeInsets.only(
+      decoration: BoxDecoration(
+        color: Colors.black38,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      padding: EdgeInsets.symmetric(
+          vertical: size.height * 0.03, horizontal: size.width * 0.06),
+      margin: EdgeInsets.only(
           left: size.width * 0.05,
           right: size.width * 0.05,
           bottom: size.width * 0.05),
       width: size.width,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(100)),
               color: HexColor(constants.backgroundColor),
@@ -44,19 +49,12 @@ class DashboardCard extends StatelessWidget {
             ),
           ),
           SizedBox(width: size.width * 0.05),
-          Column(
-            children: [
-              SizedBox(
-                width: size.width * 0.32,
-                child: Text(name,
-                    style: const TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white)),
-              ),
-              SizedBox(height: size.width * 0.03),
-            ],
-          ),
+          Text(name,
+              style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white)),
+          SizedBox(height: size.width * 0.03),
           const Spacer(),
           Text("$nbShares Shares")
         ],
