@@ -21,6 +21,12 @@ class _TermsConditions extends State<TermsConditions>
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
+        title: Text(
+          "Terms and conditions",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
@@ -36,14 +42,6 @@ class _TermsConditions extends State<TermsConditions>
       ),
       body: ListView(
         children: [
-          Center(
-            child: Text(
-              "Terms and conditions",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryColor),
-                  fontWeight: FontWeight.normal),
-            ),
-          ),
           SizedBox(height: size.width * 0.1),
           Padding(
             padding: EdgeInsets.only(

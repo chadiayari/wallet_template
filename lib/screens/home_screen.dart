@@ -35,18 +35,19 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               ),
               Text(
-                "...",
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: HexColor(constants.primaryColor),
-                    fontWeight: FontWeight.bold),
+                "User",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline6!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           shadowColor: Colors.transparent,
-          backgroundColor: Color(0xFF8A99A7),
+          backgroundColor: HexColor(constants.blue),
           elevation: 1,
-          iconTheme: IconThemeData(
-            color: HexColor(constants.primaryColor),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
           ),
         ),
         body: Container(
@@ -55,9 +56,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             children: [
               Container(
                 height: size.height * 0.15,
-                decoration: const BoxDecoration(
-                  color: Color(0xFF8A99A7),
-                  borderRadius: BorderRadius.only(
+                decoration: BoxDecoration(
+                  color: HexColor(constants.blue),
+                  borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
                 ),

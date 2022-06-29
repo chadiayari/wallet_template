@@ -33,6 +33,12 @@ class _ChangePassword extends State<ChangePassword>
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         centerTitle: false,
+        title: Text(
+          "Change Password",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_outlined,
@@ -47,12 +53,6 @@ class _ChangePassword extends State<ChangePassword>
       ),
       body: Column(
         children: [
-          Text(
-            "Change Password",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
-          ),
           SizedBox(height: size.width * 0.1),
           const Padding(
             padding: EdgeInsets.only(left: 20.0),

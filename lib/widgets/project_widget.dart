@@ -29,12 +29,6 @@ class ProjectWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey,
           borderRadius: BorderRadius.circular(15),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Colors.black.withOpacity(0.25),
-              blurRadius: 6,
-            ),
-          ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

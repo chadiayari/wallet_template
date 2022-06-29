@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 var backgroundColor = '#0E030';
-var primaryColor = '#dc965a';
+var primaryColor = '#89CFF0';
 var primaryBlue = '#005676';
 var primaryOrange = '#000';
 var blue = '#8A99A7';

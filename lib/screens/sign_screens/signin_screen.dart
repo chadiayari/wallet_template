@@ -73,7 +73,7 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: EdgeInsets.only(left: size.width * 0.05),
-            child: Align(
+            child: const Align(
               alignment: Alignment.topLeft,
               child: Text("Password"),
             ),

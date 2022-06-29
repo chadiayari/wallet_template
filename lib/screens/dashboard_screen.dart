@@ -15,12 +15,7 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreen extends State<DashboardScreen>
     with WidgetsBindingObserver {
   int _selectedIndex = 0;
-
-  final Map _widgetOptions = {
-    0: const HomeScreen(),
-    1: const NotificationsScreen(fromDrawer: false),
-    2: const ProfileScreen(),
-  };
+  final controller = PageController();
 
   void _onItemTapped(int index) async {
     setState(() {
@@ -33,7 +28,7 @@ class _DashboardScreen extends State<DashboardScreen>
     return Scaffold(
         backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xFF8A99A7),
+          backgroundColor: HexColor(constants.blue),
           showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(
@@ -83,14 +78,24 @@ class _DashboardScreen extends State<DashboardScreen>
           selectedItemColor: HexColor('#ffffff'),
           onTap: (index) {
             _onItemTapped(index);
+            // controller.initialPage = index;
+            controller.animateToPage(index,
+                curve: Curves.easeInOut,
+                duration: const Duration(
+                    hours: 0, minutes: 0, seconds: 0, milliseconds: 200));
           },
         ),
-        body: WillPopScope(
-          onWillPop: () async => false,
-          child: Container(
-            child: _widgetOptions[_selectedIndex],
-          ),
-        ));
+        body: PageView(
+            //onWillPop: () async => false,
+            onPageChanged: (value) => {
+                  _onItemTapped(value),
+                },
+            controller: controller,
+            children: const [
+              HomeScreen(),
+              NotificationsScreen(fromDrawer: false),
+              ProfileScreen()
+            ]));
   }
 }
 

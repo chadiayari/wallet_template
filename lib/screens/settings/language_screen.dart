@@ -23,6 +23,12 @@ class _LanguageScreen extends State<LanguageScreen>
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
+        title: Text(
+          "Select language",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
@@ -38,12 +44,6 @@ class _LanguageScreen extends State<LanguageScreen>
       ),
       body: Column(
         children: [
-          Text(
-            "Select language",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
-          ),
           SizedBox(height: size.width * 0.1),
           const Padding(
             padding: EdgeInsets.only(left: 20.0),

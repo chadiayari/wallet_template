@@ -22,11 +22,11 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                 right: 12,
                 left: 12),
             decoration: BoxDecoration(
-              color: Colors.grey,
+              color: Colors.black38,
               borderRadius: BorderRadius.circular(15),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.black.withOpacity(0.25),
                   blurRadius: 6,
                 ),
               ],
@@ -46,7 +46,7 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                               .copyWith(fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Profit pages xxxxx",
+                          "Owned Shares",
                           style:
                               Theme.of(context).textTheme.bodyText1!.copyWith(
                                     fontWeight: FontWeight.normal,
@@ -117,14 +117,8 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                 top: size.width * 0.03,
                 bottom: size.width * 0.05),
             decoration: BoxDecoration(
-              color: Colors.grey,
+              color: Colors.black38,
               borderRadius: BorderRadius.circular(15),
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.25),
-                  blurRadius: 6,
-                ),
-              ],
             ),
             child: Column(
               children: [
@@ -230,58 +224,6 @@ class _ProfileProfit extends State<ProfileProfit> with WidgetsBindingObserver {
                     ),
                   ],
                 ),
-                ExpansionTile(
-                  collapsedIconColor: Colors.white,
-                  iconColor: Colors.white,
-                  title: const Text(
-                    '2019',
-                    style:
-                        TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
-                  ),
-                  children: [
-                    ListTile(
-                      dense: true,
-                      title: Row(
-                        children: const [
-                          Text(
-                            'Amount: ',
-                          ),
-                          Text(
-                            '1000.00',
-                          ),
-                          Text(
-                            'AED',
-                          ),
-                          Spacer(),
-                          Text(
-                            'Shares number: ',
-                          ),
-                          Text(
-                            '300',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.only(
-                      top: size.width * 0.03,
-                      bottom: size.width * 0.03,
-                      right: size.width * 0.04,
-                      left: size.width * 0.04),
-                  child: Row(
-                    children: const [
-                      Text(
-                        "0",
-                      ),
-                      Spacer(),
-                      Text(
-                        "0",
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
