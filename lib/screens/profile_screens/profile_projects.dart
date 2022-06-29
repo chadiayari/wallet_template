@@ -31,19 +31,13 @@ class _ProfileProjects extends State<ProfileProjects>
           children: [
             const Text(
               "My projects",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: size.height * 0.02),
               child: const Text(
                 "Hoot",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 15),
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
               ),
             ),
             GestureDetector(

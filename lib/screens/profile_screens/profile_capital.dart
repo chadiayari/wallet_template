@@ -25,10 +25,7 @@ class _ProfileCapital extends State<ProfileCapital>
           children: [
             const Text(
               "Shares Capital Summary",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
             SizedBox(
               height: size.height * 0.02,
@@ -40,10 +37,7 @@ class _ProfileCapital extends State<ProfileCapital>
             ),
             const Text(
               "Current Profits Total",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
             SizedBox(
               height: size.height * 0.02,

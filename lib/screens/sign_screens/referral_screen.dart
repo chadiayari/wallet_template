@@ -23,6 +23,12 @@ class _ReferralScreen extends State<ReferralScreen> {
     return Scaffold(
         extendBodyBehindAppBar: false,
         appBar: AppBar(
+          title: Text(
+            "Where did you hear about us?",
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                color: HexColor(constants.primaryColor),
+                fontWeight: FontWeight.normal),
+          ),
           centerTitle: false,
           leading: IconButton(
             icon: Icon(
@@ -38,14 +44,8 @@ class _ReferralScreen extends State<ReferralScreen> {
         ),
         body: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-              child: Text(
-                "Where did you hear about us?",
-                style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: HexColor(constants.primaryColor),
-                    fontWeight: FontWeight.normal),
-              ),
+            SizedBox(
+              height: size.height * 0.04,
             ),
             Container(
                 padding:
@@ -80,7 +80,6 @@ class _ReferralScreen extends State<ReferralScreen> {
                           'Social media',
                           'A friend',
                           'Search engine',
-                          'Hoot.ae',
                           'News',
                           'Other'
                         ].map<DropdownMenuItem<String>>((String value) {
@@ -106,24 +105,19 @@ class _ReferralScreen extends State<ReferralScreen> {
                         },
                         obscureText: false,
                         controller: referralController,
-                        cursorColor: Colors.black,
-                        style: const TextStyle(color: Colors.black),
+                        cursorColor: Colors.white,
+                        style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
-                          fillColor: Colors.white,
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: HexColor(constants.primaryColor)),
-                          ),
-                          hintText: dropdownValue == 'A friend'
-                              ? "Please enter the name of the friend"
-                              : (dropdownValue == 'Other'
-                                  ? "Please tell us about it"
-                                  : (dropdownValue == 'Hoot.ae'
-                                      ? "Please enter your Hoot account email"
-                                      : "")),
-                          hintStyle:
-                              TextStyle(color: Colors.black.withOpacity(0.3)),
-                        ),
+                            fillColor: Colors.white,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: HexColor(constants.primaryColor)),
+                            ),
+                            hintText: dropdownValue == 'A friend'
+                                ? "Please enter the name of the friend"
+                                : (dropdownValue == 'Other'
+                                    ? "Please tell us about it"
+                                    : "")),
                       )
                     : const Text(" ")),
             SizedBox(height: size.height * 0.4),

@@ -82,7 +82,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		ObauwEg2PnoEZWm1RETC57iYeec=
+		MSk1N6A+98QwPxd1jX5iIVnXH6Q=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		AdyQbe5CBs0kvVn34z3XpUVAJXU=
+		1hgYas7FPBsFtKG7+vxpG8vz9G8=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		uX/5IetBVt9jkM1IWVVFSYib8AY=
+		TyA6kn/rsR0zZVKcC2xn7VRpkO8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		LO+Af/2C3S/Wdgzuz4O2q926q7o=
+		bBb686OdYJEWJaP/XPjGf8drkFg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		4Zb+MHvGbh2ZpdAXtYA9gFRIrzM=
+		0RTm/Amb5zEc+ys089/msqpIIpk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -250,15 +250,15 @@
 		</data>
 		<key>Frameworks/hexcolor.framework/Info.plist</key>
 		<data>
-		pR+MRipvqfIlDMySbseWIuV9jfk=
+		03Ng6c0iiLd6iO1683+lXV5JWGQ=
 		</data>
 		<key>Frameworks/hexcolor.framework/_CodeSignature/CodeResources</key>
 		<data>
-		fdGlZnI2O7HXr60wdgNOZtKePcY=
+		qrHQciUes6JGMVv9ZbYUB2WA88g=
 		</data>
 		<key>Frameworks/hexcolor.framework/hexcolor</key>
 		<data>
-		tQZPWpOQhkOQI7/sjASooMUzW3I=
+		3XxP+d6ozMUl4oFY+2qnzpX/5eo=
 		</data>
 		<key>Frameworks/path_provider_ios.framework/Info.plist</key>
 		<data>
@@ -270,11 +270,11 @@
 		</data>
 		<key>Frameworks/path_provider_ios.framework/path_provider_ios</key>
 		<data>
-		rDtdyTxe7dGNb0QNajYnHTE/DN8=
+		RTBj1pUAeh64ynfFQoWlKqXWfm8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Z4SYNm3ZauqryVdn0vZYepI0SsE=
+		Us6PG+HnFy/5StGBBUSZb+oiSqw=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -420,7 +420,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7uVla5in63MXL8RTO6FuXpj6R3BYENFnxi+8BM62bNc=
+			US1cGelrnz+NkuIrCxoXmiMT5j2SrLOmgm/XhqKcyXY=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -469,7 +469,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7yPXA7KFPNKLOnojVN5yBi3PtfcATWdUkWFOsJORcyY=
+			/jemkVno4AswqEkbCfdKKskeenrivF2M8puSAVlllkw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -483,7 +483,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdMXV4BQWV7aSEn9EyMqiGzukrJiKSE5sY2oV/gIMFo=
+			K7tgKGwCunXZmRh670YrNUWwGHhEn2KA6xabeAYLrKU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -504,7 +504,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dFILBI4UkkGWpDWaQvKKP6Srns3NfnANgiOTxTv6P/M=
+			RieD8OOqozuDi95nQ4sOhWTiHuSca4e2kXiQh48uMbo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -525,7 +525,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mT+IAnVHRABgishYP02mh31sCW/ENDGuW80nLYcCcU8=
+			pKdhguP2WGqjAcheDFPxPWxlpjfYDiUNJgusGYwnA7E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -714,21 +714,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+DsklRTO643h9D4uTsLwcmbpncOCR7xkm7xiiQYhGrw=
+			xk1c8A7Jqu0GSQX9TD/ZjhSJRz62oJlzD69oTsAv7uo=
 			</data>
 		</dict>
 		<key>Frameworks/hexcolor.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mlLsbg/mnY4uOtbI3HrzQQJSTop36ovpIbmFxenaMrQ=
+			fyFcPl/T7HeCt0wknv+GUst3kfWn3ALMSztPyNrEVzw=
 			</data>
 		</dict>
 		<key>Frameworks/hexcolor.framework/hexcolor</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5xYSfd1d30kAS+SBl8XtLOS5BwEwTWklF0D7urZK35A=
+			tSECjfmT606fNwYiaXd7Vq/3tYUnxGDpv50cdZcv/DA=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_ios.framework/Info.plist</key>
@@ -749,7 +749,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R6Tl6jms5WbM3xftZNs76V/jRwW5yhRrq5JnWaI1ESo=
+			v0yEc22MWRm1tBsJT61znL+CJU/A0RYJyKbS94IV+ak=
 			</data>
 		</dict>
 	</dict>

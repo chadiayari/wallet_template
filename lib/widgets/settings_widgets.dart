@@ -22,12 +22,12 @@ class SettingsWidget extends StatelessWidget {
           top: size.width * 0.03,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.black38,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.white.withOpacity(0.25),
-              blurRadius: 6,
+              color: Colors.black.withOpacity(0.25),
+              blurRadius: 7,
             ),
           ],
         ),

@@ -37,47 +37,43 @@ class _NavDrawerState extends State<NavDrawer> {
                 content: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.white),
+                      color: Colors.grey[850]),
                   padding: const EdgeInsets.all(15),
-                  height: size.height * 0.25,
+                  height: size.height * 0.2,
                   width: size.width * 0.9,
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const Spacer(),
                         Text(
                           "You are about to leave the app",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal),
+                              .copyWith(fontWeight: FontWeight.normal),
                         ),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                        const Spacer(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             MaterialButton(
                                 minWidth: size.height * 0.04,
                                 height: size.height * 0.04,
-                                color: Colors.white,
+                                color: Colors.grey,
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(10),
                                         topLeft: Radius.circular(10))),
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
+                                    children: const <Widget>[
                                       Text(
                                         "Stay",
                                         style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 15,
-                                            color: HexColor(
-                                                constants.primaryColor)),
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15,
+                                        ),
                                       ),
                                     ]),
                                 onPressed: () {
@@ -86,7 +82,7 @@ class _NavDrawerState extends State<NavDrawer> {
                             MaterialButton(
                                 minWidth: size.height * 0.04,
                                 height: size.height * 0.04,
-                                color: Colors.white,
+                                color: Colors.grey,
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
                                         bottomRight: Radius.circular(10),
@@ -112,6 +108,7 @@ class _NavDrawerState extends State<NavDrawer> {
                                 }),
                           ],
                         ),
+                        const Spacer(),
                       ],
                     ),
                   ),
@@ -170,7 +167,7 @@ class _NavDrawerState extends State<NavDrawer> {
     }
 
     return Drawer(
-      backgroundColor: HexColor(constants.backgroundColor),
+      backgroundColor: Colors.grey[850],
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
@@ -179,7 +176,6 @@ class _NavDrawerState extends State<NavDrawer> {
               children: [
                 Icon(
                   Icons.account_circle,
-                  color: Colors.black,
                   size: size.width * 0.1,
                 ),
                 Text(
@@ -193,8 +189,10 @@ class _NavDrawerState extends State<NavDrawer> {
                   children: [
                     Text(
                       "Id number",
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.normal),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(fontWeight: FontWeight.normal),
                     ),
                     Container(
                       padding: const EdgeInsets.all(5),

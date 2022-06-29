@@ -54,64 +54,61 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
       ),
       body: ListView(
         children: [
-          Container(
-            decoration: BoxDecoration(color: HexColor("#F5F5F5")),
-            child: Column(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      height: size.height * 0.15,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(150),
-                            bottomRight: Radius.circular(150)),
-                      ),
-                      child: Row(
-                        children: [
-                          const Spacer(),
-                          Container(
-                            width: size.width * 0.3,
-                            height: size.width * 0.3,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.contain,
-                                image: AssetImage('assets/images/hoot.png'),
-                              ),
+          Column(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    height: size.height * 0.15,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(150),
+                          bottomRight: Radius.circular(150)),
+                    ),
+                    child: Row(
+                      children: [
+                        const Spacer(),
+                        Container(
+                          width: size.width * 0.3,
+                          height: size.width * 0.3,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.contain,
+                              image: AssetImage('assets/images/hoot.png'),
                             ),
                           ),
-                          SizedBox(
-                            width: size.width * 0.03,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "aaa",
-                                style: TextStyle(
-                                    color: HexColor("#172B61"),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 25),
-                              ),
-                              Text(
-                                "{2021-Now}",
-                                style: TextStyle(
-                                    color: HexColor("#172B61"),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 15),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                        ],
-                      ),
+                        ),
+                        SizedBox(
+                          width: size.width * 0.03,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "aaa",
+                              style: TextStyle(
+                                  color: HexColor("#172B61"),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 25),
+                            ),
+                            Text(
+                              "{2021-Now}",
+                              style: TextStyle(
+                                  color: HexColor("#172B61"),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 15),
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                      ],
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +138,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                   child: const Text(
                     "Shares Value",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 15),
                   )),
@@ -166,7 +163,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                     Text(
                       "Share history",
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 15),
                     ),
@@ -179,7 +176,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                 child: const Text(
                   "Your other Projects",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
                 ),

@@ -27,7 +27,7 @@ class CapitalWidget extends StatelessWidget {
           bottom: size.height * 0.02,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.grey,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -160,7 +160,7 @@ class ProfitWidget extends StatelessWidget {
           bottom: size.height * 0.02,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.grey,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(

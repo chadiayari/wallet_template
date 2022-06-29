@@ -33,7 +33,7 @@ class _TransferScreen extends State<TransferScreen>
                 content: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: HexColor(constants.backgroundColor)),
+                      color: Colors.grey[850]),
                   padding: const EdgeInsets.all(15),
                   height: 250,
                   width: 250,
@@ -129,8 +129,7 @@ class _TransferScreen extends State<TransferScreen>
                     }
                   }),
                   controller: usernameController,
-                  cursorColor: Colors.black,
-                  style: const TextStyle(color: Colors.black),
+                  cursorColor: Colors.white,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide:
@@ -139,8 +138,7 @@ class _TransferScreen extends State<TransferScreen>
                     ),
                     hintText: "beneficial ID",
                     border: const UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+                        borderSide: BorderSide(color: Colors.white)),
                   ),
                 ),
               ),
@@ -201,7 +199,7 @@ class _TransferScreen extends State<TransferScreen>
                     }
                   }),
                   controller: sharesController,
-                  cursorColor: Colors.black,
+                  cursorColor: Colors.white,
                   style: TextStyle(color: HexColor(constants.primaryColor)),
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -211,8 +209,7 @@ class _TransferScreen extends State<TransferScreen>
                     ),
                     hintText: "0.0",
                     border: const UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black)),
-                    hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+                        borderSide: BorderSide(color: Colors.white)),
                   ),
                 ),
               ),
@@ -230,7 +227,9 @@ class _TransferScreen extends State<TransferScreen>
                     : HexColor(constants.primaryColor).withOpacity(0.3),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                onPressed: () {},
+                onPressed: () {
+                  payPopup();
+                },
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const <Widget>[

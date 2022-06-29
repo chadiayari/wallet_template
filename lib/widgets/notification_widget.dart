@@ -26,9 +26,7 @@ class NotifcationCard extends StatelessWidget {
       ),
       width: size.width,
       decoration: BoxDecoration(
-        color: tag == "TRANSFER"
-            ? HexColor(constants.backgroundColor)
-            : HexColor(constants.priaryYellow),
+        color: HexColor(constants.primaryColor),
         borderRadius: BorderRadius.circular(12),
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -46,11 +44,10 @@ class NotifcationCard extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(100)),
               color: Colors.white,
             ),
-            child: Icon((tag == "PURCHASE")
-                ? Icons.add_shopping_cart
-                : ((content.contains("recieved"))
-                    ? Icons.arrow_downward
-                    : Icons.arrow_upward)),
+            child: const Icon(
+              Icons.add_shopping_cart,
+              color: Colors.black,
+            ),
           ),
           SizedBox(width: size.width * 0.05),
           Column(

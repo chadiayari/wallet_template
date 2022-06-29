@@ -8,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter/services.dart';
 
 import '../../../constants.dart' as constants;
+import '../../constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
         title: Container(
           height: size.height * 0.2,
           decoration: BoxDecoration(
-            color: HexColor(constants.primaryColor),
+            color: HexColor(constants.blue),
             borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
@@ -57,23 +58,23 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
           ),
         ),
         shadowColor: Colors.transparent,
-        backgroundColor: HexColor(constants.primaryColor),
+        backgroundColor: HexColor(constants.blue),
         elevation: 1,
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
       ),
-      body: ListView(
-        children: [
-          Container(
-            decoration: BoxDecoration(color: HexColor("#F5F5F5")),
-            child: Column(
+      body: Container(
+        decoration: backgroundGradientStyle,
+        child: ListView(
+          children: [
+            Column(
               children: [
                 Container(
                   padding: EdgeInsets.only(left: size.width * 0.05),
-                  height: size.height * 0.18,
+                  height: size.height * 0.15,
                   decoration: BoxDecoration(
-                    color: HexColor(constants.primaryColor),
+                    color: HexColor(constants.blue),
                     borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(20),
                         bottomRight: Radius.circular(20)),
@@ -89,9 +90,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6!
-                                .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                .copyWith(fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -106,14 +105,11 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!
-                                  .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.normal),
+                                  .copyWith(fontWeight: FontWeight.normal),
                             ),
                             IconButton(
                               icon: const Icon(
                                 Icons.copy,
-                                color: Colors.white,
                               ),
                               iconSize: size.width * 0.05,
                               onPressed: () {
@@ -131,7 +127,7 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                   height: size.height * 0.06,
                   margin: EdgeInsets.all(size.width * 0.05),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black38,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -189,11 +185,11 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                 ),
               ],
             ),
-          ),
-          profit
-              ? const ProfileProfit()
-              : (shares ? const ProfileCapital() : const ProfileProjects())
-        ],
+            profit
+                ? const ProfileProfit()
+                : (shares ? const ProfileCapital() : const ProfileProjects())
+          ],
+        ),
       ),
     );
   }

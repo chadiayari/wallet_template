@@ -1,8 +1,8 @@
 import 'package:wallet_template/components/input_field.dart';
-import 'package:wallet_template/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
+import '../dashboard_screen.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({Key? key}) : super(key: key);
@@ -25,6 +25,12 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        title: Text(
+          "Sign in",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
@@ -37,22 +43,16 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
         ),
         elevation: 0.0,
       ),
-      body: ListView(
+      body: Column(
         children: [
-          Center(
-            child: Text(
-              "Sign in",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryColor),
-                  fontWeight: FontWeight.normal),
-            ),
+          SizedBox(
+            height: size.height * 0.08,
           ),
-          const Spacer(),
           const Padding(
             padding: EdgeInsets.only(left: 20.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Text("Emirates ID"),
+              child: Text("Email"),
             ),
           ),
           Padding(
@@ -71,9 +71,9 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
               pwd: false,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
+          Padding(
+            padding: EdgeInsets.only(left: size.width * 0.05),
+            child: const Align(
               alignment: Alignment.topLeft,
               child: Text("Password"),
             ),
@@ -94,7 +94,6 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
               pwd: true,
             ),
           ),
-          const Spacer(),
           Container(
             padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
             child: MaterialButton(
@@ -117,12 +116,11 @@ class _SigninScreen extends State<SigninScreen> with WidgetsBindingObserver {
                     ),
                   ]),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const HomeScreen()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (_) => const DashboardScreen()));
               },
             ),
           ),
-          const Spacer(),
         ],
       ),
     );

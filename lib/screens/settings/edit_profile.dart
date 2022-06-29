@@ -32,6 +32,12 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
+        title: Text(
+          "Edit Profile",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.primaryColor),
+              fontWeight: FontWeight.normal),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
@@ -47,20 +53,12 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
       ),
       body: ListView(
         children: [
-          Center(
-            child: Text(
-              "Edit Profile",
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                  color: HexColor(constants.primaryColor),
-                  fontWeight: FontWeight.normal),
-            ),
-          ),
           Padding(
             padding:
                 EdgeInsets.only(left: size.width * 0.05, top: size.width * 0.1),
             child: const Align(
               alignment: Alignment.topLeft,
-              child: Text("First name"),
+              child: Text("Full name"),
             ),
           ),
           Padding(
@@ -77,95 +75,11 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
               }),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: const Align(
-              alignment: Alignment.topLeft,
-              child: Text("Last name"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: secondNameConntroller,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  emailHasValue = true;
-                } else {
-                  emailHasValue = false;
-                }
-              }),
-            ),
-          ),
           const Padding(
             padding: EdgeInsets.only(left: 20.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Text("ADCC Membership Number"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: adccNbController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Emirates ID number"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: emiratesIdController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Verified Phone"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: phoneController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Preferred Phone"),
+              child: Text("Phone Number"),
             ),
           ),
           Padding(
@@ -186,7 +100,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
             padding: EdgeInsets.only(left: 20.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Text("Verified E-mail"),
+              child: Text("Email"),
             ),
           ),
           Padding(
@@ -201,76 +115,6 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                   passwordHasValue = false;
                 }
               }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Preferred E-mail"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: prfEmailController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Emirates ID - Date of Expiry"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: expiryController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Address Line"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: addressController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Date of Birth"),
             ),
           ),
           const Padding(
@@ -333,7 +177,9 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                           color: Colors.white),
                     ),
                   ]),
-              onPressed: () async {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           const Spacer(),

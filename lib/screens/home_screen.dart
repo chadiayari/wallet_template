@@ -6,6 +6,7 @@ import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
+import '../constants.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -34,96 +35,108 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               ),
               Text(
-                "...",
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: HexColor(constants.primaryColor),
-                    fontWeight: FontWeight.bold),
+                "User",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline6!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           shadowColor: Colors.transparent,
-          backgroundColor: HexColor(constants.backgroundColor),
+          backgroundColor: HexColor(constants.blue),
           elevation: 1,
-          iconTheme: IconThemeData(
-            color: HexColor(constants.primaryColor),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
           ),
         ),
-        body: ListView(
-          children: [
-            Container(
-              height: size.height * 0.35,
-              decoration: BoxDecoration(
-                color: HexColor(constants.backgroundColor),
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(100),
-                    bottomRight: Radius.circular(100)),
+        body: Container(
+          decoration: backgroundGradientStyle,
+          child: ListView(
+            children: [
+              Container(
+                height: size.height * 0.15,
+                decoration: BoxDecoration(
+                  color: HexColor(constants.blue),
+                  borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30)),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: size.height * 0.03),
+                    Text(
+                      "You own",
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.normal),
+                    ),
+                    SizedBox(height: size.height * 0.01),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "0",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline5!
+                              .copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          " Shares",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline6!
+                              .copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: size.height * 0.06),
+                  ],
+                ),
               ),
-              child: Column(
+              SizedBox(height: size.height * 0.08),
+              Row(
                 children: [
-                  SizedBox(height: size.height * 0.03),
-                  Text(
-                    "You own",
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.normal),
-                  ),
-                  SizedBox(height: size.height * 0.02),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "0",
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                  const Spacer(),
+                  IconWhiteButton(
+                      iconName: Icon(Icons.arrow_downward,
+                          color: HexColor(constants.primaryColor)),
+                      title: "Purchase",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const PurchaseMoreScreen()));
+                      }),
+                  SizedBox(width: size.width * 0.05),
+                  IconRedButton(
+                      iconName: const Icon(
+                        Icons.arrow_upward,
+                        color: Colors.white,
                       ),
-                      Text(
-                        " Shares",
-                        style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: size.height * 0.06),
-                  Row(
-                    children: [
-                      const Spacer(),
-                      IconWhiteButton(
-                          iconName: Icon(Icons.arrow_downward,
-                              color: HexColor(constants.primaryColor)),
-                          title: "Purchase",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) =>
-                                        const PurchaseMoreScreen()));
-                          }),
-                      SizedBox(width: size.width * 0.05),
-                      IconRedButton(
-                          iconName: const Icon(
-                            Icons.arrow_upward,
-                            color: Colors.white,
-                          ),
-                          title: "Transfer",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const TransferScreen()));
-                          }),
-                      const Spacer(),
-                    ],
-                  ),
+                      title: "Transfer",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const TransferScreen()));
+                      }),
+                  const Spacer(),
                 ],
               ),
-            ),
-            SizedBox(height: size.height * 0.08),
-            const DashboardCard(
-                name: "Purchased Shares", nbShares: "0", icon: "Icons"),
-            const DashboardCard(
-                name: "Transfered Shares", nbShares: "0", icon: "Icons"),
-            const DashboardCard(
-                name: "Recieved Shares", nbShares: "0", icon: "Icons"),
-          ],
+              SizedBox(height: size.height * 0.08),
+              const DashboardCard(
+                  name: "Purchased Shares", nbShares: "0", icon: "Icons"),
+              const DashboardCard(
+                  name: "Transfered Shares", nbShares: "0", icon: "Icons"),
+              const DashboardCard(
+                  name: "Recieved Shares", nbShares: "0", icon: "Icons"),
+            ],
+          ),
         ));
   }
 }
