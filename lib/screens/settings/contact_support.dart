@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
+import '../../constants.dart';
 
 class ContactSupport extends StatefulWidget {
   const ContactSupport({Key? key}) : super(key: key);
@@ -18,13 +19,19 @@ class _ContactSupport extends State<ContactSupport>
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      extendBodyBehindAppBar: false,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: Text(
+          "Contact Support",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.secondaryColor),
+              fontWeight: FontWeight.bold),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
-            Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryColor),
+            Icons.arrow_back_ios_new,
+            color: HexColor(constants.secondaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -33,83 +40,80 @@ class _ContactSupport extends State<ContactSupport>
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: Column(
-        children: [
-          Text(
-            "Contact Support",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
-          ),
-          SizedBox(height: size.width * 0.1),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("You can contact us through"),
+      body: Container(
+        decoration: backgroundGradientStyle,
+        child: ListView(
+          children: [
+            SizedBox(height: size.width * 0.1),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text("You can contact us through"),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: size.width * 0.2,
-                top: size.width * 0.02,
-                bottom: size.width * 0.01),
-            child: Row(
-              children: [
-                const Icon(Icons.phone),
-                SizedBox(width: size.width * 0.02),
-                const Text("+97124103535")
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  left: size.width * 0.2,
+                  top: size.width * 0.02,
+                  bottom: size.width * 0.01),
+              child: Row(
+                children: [
+                  const Icon(Icons.phone),
+                  SizedBox(width: size.width * 0.02),
+                  const Text("+97124103535")
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: size.width * 0.2,
-                top: size.width * 0.02,
-                bottom: size.width * 0.01),
-            child: Row(
-              children: [
-                const Icon(FontAwesomeIcons.whatsapp),
-                SizedBox(width: size.width * 0.02),
-                const Text("+97124103535")
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  left: size.width * 0.2,
+                  top: size.width * 0.02,
+                  bottom: size.width * 0.01),
+              child: Row(
+                children: [
+                  const Icon(FontAwesomeIcons.whatsapp),
+                  SizedBox(width: size.width * 0.02),
+                  const Text("+97124103535")
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-                left: size.width * 0.2,
-                top: size.width * 0.02,
-                bottom: size.width * 0.01),
-            child: Row(
-              children: [
-                const Icon(Icons.email_outlined),
-                SizedBox(width: size.width * 0.02),
-                const Text("info@abudhabicc.ae")
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  left: size.width * 0.2,
+                  top: size.width * 0.02,
+                  bottom: size.width * 0.01),
+              child: Row(
+                children: [
+                  const Icon(Icons.email_outlined),
+                  SizedBox(width: size.width * 0.02),
+                  const Text("info@abudhabicc.ae")
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: size.width * 0.03),
-          Padding(
-            padding: EdgeInsets.only(left: 20.0, bottom: size.width * 0.02),
-            child: const Align(
-              alignment: Alignment.topLeft,
-              child: Text("Work hours"),
+            SizedBox(height: size.width * 0.03),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0, bottom: size.width * 0.02),
+              child: const Align(
+                alignment: Alignment.topLeft,
+                child: Text("Work hours"),
+              ),
             ),
-          ),
-          Center(
-            child: Text(
-              "Mon - Fri: 9:00am - 4:00pm",
-              style: TextStyle(color: HexColor(constants.primaryBlue)),
+            Center(
+              child: Text(
+                "Mon - Fri: 9:00am - 4:00pm",
+                style: TextStyle(color: HexColor(constants.secondaryColor)),
+              ),
             ),
-          ),
-          const Spacer(),
-          RedButton(
-              title: "Close",
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-          SizedBox(height: size.width * 0.2),
-        ],
+            const Spacer(),
+            RedButton(
+                title: "Close",
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+            SizedBox(height: size.width * 0.2),
+          ],
+        ),
       ),
     );
   }

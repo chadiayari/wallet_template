@@ -21,7 +21,7 @@ class _PurchaseMoreScreen extends State<PurchaseMoreScreen>
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        extendBodyBehindAppBar: false,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           centerTitle: false,
           leading: IconButton(

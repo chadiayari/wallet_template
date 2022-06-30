@@ -31,19 +31,19 @@ class _SettingsScreen extends State<SettingsScreen>
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        extendBodyBehindAppBar: false,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: Text(
             "Settings",
             style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
+                color: HexColor(constants.secondaryColor),
+                fontWeight: FontWeight.bold),
           ),
           centerTitle: false,
           leading: IconButton(
             icon: Icon(
-              Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryColor),
+              Icons.arrow_back_ios_new,
+              color: HexColor(constants.secondaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);

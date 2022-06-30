@@ -22,7 +22,7 @@ class _NotificationsScreen extends State<NotificationsScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         endDrawer: const NavDrawer(),
-        extendBodyBehindAppBar: false,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -39,14 +39,11 @@ class _NotificationsScreen extends State<NotificationsScreen>
                 )
               : Container(),
           centerTitle: false,
-          iconTheme: IconThemeData(
-            color: HexColor(constants.primaryColor),
-          ),
           title: Text(
             'Notifications',
-            style: Theme.of(context).textTheme.headline6!.copyWith(
-                fontWeight: FontWeight.bold,
-                color: HexColor(constants.primaryColor)),
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                color: HexColor(constants.secondaryColor),
+                fontWeight: FontWeight.bold),
           ),
         ),
         body: Container(

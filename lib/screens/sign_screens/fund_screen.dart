@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:wallet_template/screens/sign_screens/signin_screen.dart';
+import 'package:wallet_template/screens/sign_screens/welcome_screen.dart';
 import '../../constants.dart' as constants;
+import '../../constants.dart';
 
 class FundScreen extends StatefulWidget {
   const FundScreen({Key? key}) : super(key: key);
@@ -21,19 +22,19 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        extendBodyBehindAppBar: false,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: Text(
             "Fund your account",
             style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
+                color: HexColor(constants.secondaryColor),
+                fontWeight: FontWeight.bold),
           ),
           centerTitle: false,
           leading: IconButton(
             icon: Icon(
-              Icons.arrow_back_outlined,
-              color: HexColor(constants.primaryColor),
+              Icons.arrow_back_ios_new,
+              color: HexColor(constants.secondaryColor),
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -43,6 +44,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
           elevation: 0.0,
         ),
         body: Container(
+          decoration: backgroundGradientStyle,
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ListView(
             children: [
@@ -101,8 +103,8 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                     Text(
                       "$totalPay2 USD",
                       style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: HexColor(constants.primaryColor),
-                          fontWeight: FontWeight.normal),
+                          color: HexColor(constants.blue),
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -128,8 +130,8 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                     minWidth: size.width * 0.4,
                     height: 50,
                     color: hasValue
-                        ? HexColor(constants.primaryColor)
-                        : HexColor(constants.primaryColor).withOpacity(0.3),
+                        ? HexColor(constants.secondaryColor)
+                        : HexColor(constants.secondaryColor).withOpacity(0.3),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
@@ -138,22 +140,22 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                           Text(
                             "Pay Now",
                             style: TextStyle(
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.normal,
                                 fontSize: 18,
-                                color: Colors.white),
+                                color: Colors.black87),
                           ),
                         ]),
                     onPressed: () async {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          backgroundColor: HexColor(constants.blue),
+                          backgroundColor: HexColor(constants.secondaryColor),
                           content: const Text('Payment successful'),
                         ),
                       );
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (_) => const SigninScreen()));
+                              builder: (_) => const WelcomeScreen()));
                     }),
               ),
             ],

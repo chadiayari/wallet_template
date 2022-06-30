@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../../constants.dart' as constants;
+import '../constants.dart';
 import '../widgets/transaction_widget.dart';
 
 class TransactionScreen extends StatefulWidget {
@@ -21,13 +22,19 @@ class _TransactionScreen extends State<TransactionScreen>
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      extendBodyBehindAppBar: false,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        title: Text(
+          "Transaction History",
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+              color: HexColor(constants.secondaryColor),
+              fontWeight: FontWeight.bold),
+        ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
-            Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryColor),
+            Icons.arrow_back_ios_new,
+            color: HexColor(constants.secondaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -36,45 +43,40 @@ class _TransactionScreen extends State<TransactionScreen>
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: ListView(children: [
-        Center(
-          child: Text(
-            "Transaction History",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.primaryColor),
-                fontWeight: FontWeight.normal),
+      body: Container(
+        decoration: backgroundGradientStyle,
+        child: ListView(children: [
+          SizedBox(height: size.height * 0.04),
+          Container(
+            margin: EdgeInsets.only(
+                left: size.width * 0.05,
+                right: size.width * 0.05,
+                top: size.width * 0.03,
+                bottom: size.width * 0.05),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.25),
+                  blurRadius: 6,
+                ),
+              ],
+            ),
+            child: Column(
+              children: const [
+                TransactionWidget(
+                  date: "createdAt",
+                  id: "id",
+                  nbShares: "nb of shares",
+                  type: "transaction type",
+                  total: "total",
+                ),
+              ],
+            ),
           ),
-        ),
-        SizedBox(height: size.height * 0.04),
-        Container(
-          margin: EdgeInsets.only(
-              left: size.width * 0.05,
-              right: size.width * 0.05,
-              top: size.width * 0.03,
-              bottom: size.width * 0.05),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: Colors.black.withOpacity(0.25),
-                blurRadius: 6,
-              ),
-            ],
-          ),
-          child: Column(
-            children: const [
-              TransactionWidget(
-                date: "createdAt",
-                id: "id",
-                nbShares: "nb of shares",
-                type: "transaction type",
-                total: "total",
-              ),
-            ],
-          ),
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 }

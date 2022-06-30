@@ -112,6 +112,8 @@ class AppTheme {
       ),
       textTheme: _buildTextTheme(base.textTheme),
       platform: TargetPlatform.iOS,
+      primaryColorDark: Colors.red,
+      bottomAppBarColor: Colors.red,
       colorScheme: colorScheme.copyWith(secondary: secondaryColor),
     );
   }

@@ -17,9 +17,11 @@ class RedButton extends StatelessWidget {
       child: MaterialButton(
           minWidth: size.width * 0.4,
           height: 50,
-          color: HexColor(constants.primaryColor),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          color: Colors.transparent.withOpacity(0),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              side: BorderSide(
+                  width: 1, color: HexColor(constants.secondaryColor))),
           onPressed: onPressed,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +29,7 @@ class RedButton extends StatelessWidget {
                 Text(
                   title,
                   style: const TextStyle(
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.normal,
                       fontSize: 18,
                       color: Colors.white),
                 ),
@@ -89,22 +91,19 @@ class WhiteButton extends StatelessWidget {
       child: MaterialButton(
           minWidth: size.width * 0.4,
           height: 50,
-          color: Colors.white,
+          color: HexColor(constants.secondaryColor),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
-              side: BorderSide(
-                  width: 1, color: HexColor(constants.primaryColor))),
+              side: const BorderSide(width: 1, color: Colors.black)),
           onPressed: onPressed,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: HexColor(constants.primaryColor)),
-                ),
+                Text(title,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: 18,
+                        color: Colors.black)),
               ])),
     );
   }
