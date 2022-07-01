@@ -99,35 +99,24 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 ),
               ),
               SizedBox(height: size.height * 0.08),
-              Row(
-                children: [
-                  const Spacer(),
-                  IconWhiteButton(
-                      iconName: Icon(Icons.arrow_downward,
-                          color: HexColor(constants.primaryColor)),
-                      title: "Purchase",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const PurchaseMoreScreen()));
-                      }),
-                  SizedBox(width: size.width * 0.05),
-                  IconRedButton(
-                      iconName: const Icon(
-                        Icons.arrow_upward,
-                        color: Colors.white,
-                      ),
-                      title: "Transfer",
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const TransferScreen()));
-                      }),
-                  const Spacer(),
-                ],
-              ),
+              WhiteButton(
+                  title: "Purchase",
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const PurchaseMoreScreen()));
+                  }),
+              // SizedBox(width: size.width * 0.05),
+              RedButton(
+                  title: "Transfer",
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const TransferScreen()));
+                  }),
+              const Spacer(),
               SizedBox(height: size.height * 0.08),
               const DashboardCard(
                   name: "Purchased Shares", nbShares: "0", icon: "Icons"),

@@ -1,9 +1,10 @@
+import 'dart:ui';
+
 import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:wallet_template/widgets/notification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
-import '../constants.dart';
 
 class NotificationsScreen extends StatefulWidget {
   final bool fromDrawer;
@@ -17,9 +18,72 @@ class NotificationsScreen extends StatefulWidget {
 class _NotificationsScreen extends State<NotificationsScreen>
     with WidgetsBindingObserver {
   final TextEditingController sharesController = TextEditingController();
+  List<bool> opened = [false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
+    notificationPopup(notificationContent) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: AlertDialog(
+                backgroundColor: Colors.transparent,
+                content: Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 2, color: HexColor(constants.primaryColor)),
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white),
+                  //padding: const EdgeInsets.all(15),
+                  height: size.height * 0.25,
+                  width: size.width * 0.9,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                          width: size.width * 0.9,
+                          height: size.height * 0.04,
+                          decoration: BoxDecoration(
+                            color: HexColor(constants.primaryColor),
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(28),
+                                topRight: Radius.circular(28)),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Notification",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          )),
+                      const Spacer(),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: size.width * 0.04),
+                        child: Text(
+                          notificationContent,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  color: HexColor(constants.primaryColor),
+                                  fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          });
+    }
+
     return Scaffold(
         endDrawer: const NavDrawer(),
         extendBodyBehindAppBar: true,
@@ -39,15 +103,18 @@ class _NotificationsScreen extends State<NotificationsScreen>
                 )
               : Container(),
           centerTitle: false,
+          iconTheme: IconThemeData(
+            color: HexColor(constants.secondaryColor), //change your color here
+          ),
           title: Text(
             'Notifications',
             style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: HexColor(constants.secondaryColor),
-                fontWeight: FontWeight.bold),
+                fontWeight: FontWeight.bold,
+                color: HexColor(constants.secondaryColor)),
           ),
         ),
         body: Container(
-          decoration: backgroundGradientStyle,
+          decoration: constants.backgroundGradientStyle,
           child: ListView(
             children: [
               Column(
@@ -67,8 +134,22 @@ class _NotificationsScreen extends State<NotificationsScreen>
                       ),
                     ),
                   ),
-                  const NotifcationCard(
-                      content: "some content", tag: "some tag"),
+                  for (int i = 0; i <= 4; i++)
+                    !opened[i]
+                        ? GestureDetector(
+                            onTap: () {
+                              notificationPopup("zzzzz");
+                              setState(() {
+                                opened[i] = true;
+                              });
+                            },
+                            child: NotifcationCard(
+                              content: "content",
+                              tag: "ssss",
+                              opened: opened[i],
+                            ),
+                          )
+                        : Container(),
 
                   //earlier notifications
                   Container(
@@ -84,8 +165,22 @@ class _NotificationsScreen extends State<NotificationsScreen>
                       ),
                     ),
                   ),
-                  const NotifcationCard(
-                      content: "some content", tag: "some tag"),
+                  for (int i = 0; i <= 4; i++)
+                    opened[i]
+                        ? GestureDetector(
+                            onTap: () {
+                              notificationPopup("zzzzz");
+                              setState(() {
+                                opened[i] = true;
+                              });
+                            },
+                            child: NotifcationCard(
+                              content: "content",
+                              tag: "ssss",
+                              opened: opened[i],
+                            ),
+                          )
+                        : Container(),
                 ],
               ),
             ],
