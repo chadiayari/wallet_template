@@ -1,11 +1,11 @@
 import 'package:wallet_template/components/buttons.dart';
+import 'package:wallet_template/screens/sign_screens/fund_screen.dart';
 import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:wallet_template/widgets/project_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../../constants.dart' as constants;
-import '../purchase_more_funds.dart';
 
 class ProjectScreen extends StatefulWidget {
   const ProjectScreen({Key? key}) : super(key: key);
@@ -127,7 +127,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const PurchaseMoreScreen()));
+                                builder: (_) => const FundScreen()));
                       }),
                   const Spacer(),
                 ],

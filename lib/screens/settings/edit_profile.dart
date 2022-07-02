@@ -1,7 +1,9 @@
+import 'package:wallet_template/components/buttons.dart';
 import 'package:wallet_template/components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
+import '../../constants.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -30,19 +32,19 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: false,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
           "Edit Profile",
           style: Theme.of(context).textTheme.headline5!.copyWith(
-              color: HexColor(constants.primaryColor),
-              fontWeight: FontWeight.normal),
+              color: HexColor(constants.secondaryColor),
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: false,
         leading: IconButton(
           icon: Icon(
-            Icons.arrow_back_outlined,
-            color: HexColor(constants.primaryColor),
+            Icons.arrow_back_ios_new,
+            color: HexColor(constants.secondaryColor),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -51,139 +53,96 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: ListView(
-        children: [
-          Padding(
-            padding:
-                EdgeInsets.only(left: size.width * 0.05, top: size.width * 0.1),
-            child: const Align(
-              alignment: Alignment.topLeft,
-              child: Text("Full name"),
+      body: Container(
+        decoration: backgroundGradientStyle,
+        child: ListView(
+          children: [
+            SizedBox(height: size.height * 0.03),
+            Padding(
+              padding: EdgeInsets.only(left: size.width * 0.05),
+              child: EditProfileField(
+                hintText: "Full Name",
+                onPressed: () {},
+                inputController: firstNameController,
+                onChanged: (text) => setState(() {
+                  if (text != "") {
+                    emailHasValue = true;
+                  } else {
+                    emailHasValue = false;
+                  }
+                }),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: firstNameController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  emailHasValue = true;
-                } else {
-                  emailHasValue = false;
-                }
-              }),
+            Padding(
+              padding: EdgeInsets.only(left: size.width * 0.05),
+              child: EditProfileField(
+                hintText: "Phone Number",
+                onPressed: () {},
+                inputController: prfPhoneController,
+                onChanged: (text) => setState(() {
+                  if (text != "") {
+                    passwordHasValue = true;
+                  } else {
+                    passwordHasValue = false;
+                  }
+                }),
+              ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Phone Number"),
+            Padding(
+              padding: EdgeInsets.only(left: size.width * 0.05),
+              child: EditProfileField(
+                hintText: "Email",
+                onPressed: () {},
+                inputController: emailController,
+                onChanged: (text) => setState(() {
+                  if (text != "") {
+                    passwordHasValue = true;
+                  } else {
+                    passwordHasValue = false;
+                  }
+                }),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: prfPhoneController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Email"),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: size.width * 0.05),
-            child: EditProfileField(
-              onPressed: () {},
-              inputController: emailController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Text("Gender"),
-            ),
-          ),
-          Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-              child: FormField<String>(builder: (FormFieldState<String> state) {
-                return InputDecorator(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0))),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<String>(
-                      icon: Icon(
-                        Icons.keyboard_arrow_down,
-                        color: HexColor(constants.primaryColor),
+            Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child:
+                    FormField<String>(builder: (FormFieldState<String> state) {
+                  return InputDecorator(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0))),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        icon: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: HexColor(constants.blue),
+                        ),
+                        isDense: true,
+                        value: dropdownValue,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownValue = newValue!;
+                          });
+                        },
+                        items: <String>[
+                          'Male',
+                          'Female',
+                          'Other',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
                       ),
-                      isDense: true,
-                      value: dropdownValue,
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          dropdownValue = newValue!;
-                        });
-                      },
-                      items: <String>[
-                        'Male',
-                        'Female',
-                        'Other',
-                      ].map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
                     ),
-                  ),
-                );
-              })),
-          Container(
-            padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
-            child: MaterialButton(
-              minWidth: size.width * 0.4,
-              height: 50,
-              color: HexColor(constants.primaryColor),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Text(
-                      "Save",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          color: Colors.white),
-                    ),
-                  ]),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-          const Spacer(),
-        ],
+                  );
+                })),
+            RedButton(title: "Save", onPressed: () {}),
+            const Spacer(),
+          ],
+        ),
       ),
     );
   }

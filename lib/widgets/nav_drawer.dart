@@ -129,7 +129,7 @@ class _NavDrawerState extends State<NavDrawer> {
                 content: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: HexColor(constants.backgroundColor)),
+                      color: HexColor(constants.secondaryColor)),
                   padding: const EdgeInsets.all(15),
                   height: 250,
                   width: 250,
@@ -146,7 +146,7 @@ class _NavDrawerState extends State<NavDrawer> {
                           height: size.height * 0.01,
                         ),
                         Text(
-                          "First Name" "Last Name",
+                          "First Name",
                           style: Theme.of(context)
                               .textTheme
                               .headline6!
@@ -176,58 +176,36 @@ class _NavDrawerState extends State<NavDrawer> {
               children: [
                 Icon(
                   Icons.account_circle,
-                  size: size.width * 0.1,
+                  size: size.width * 0.2,
                 ),
+                SizedBox(height: size.height * 0.01),
                 Text(
-                  "First" "Last",
+                  "First Name",
                   style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: HexColor(constants.primaryColor),
-                      fontWeight: FontWeight.normal),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Id number",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontWeight: FontWeight.normal),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: IconButton(
-                        icon: const Icon(Icons.copy),
-                        iconSize: size.width * 0.05,
-                        onPressed: () {
-                          Clipboard.setData(
-                              const ClipboardData(text: "First Name"));
-                        },
-                      ),
-                    ),
-                  ],
+                      color: HexColor(constants.secondaryColor),
+                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),
           ),
           ListTile(
-            leading:
-                Icon(Icons.qr_code_2, color: HexColor(constants.primaryColor)),
+            leading: Icon(Icons.qr_code_2,
+                color: HexColor(constants.secondaryColor)),
             title: Text(
               'QR Code',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryColor),
+                  color: HexColor(constants.secondaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {Navigator.pop(context), qrPopup()},
           ),
           ListTile(
             leading:
-                Icon(Icons.settings, color: HexColor(constants.primaryColor)),
+                Icon(Icons.settings, color: HexColor(constants.secondaryColor)),
             title: Text(
               'Settings',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryColor),
+                  color: HexColor(constants.secondaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {
@@ -237,22 +215,22 @@ class _NavDrawerState extends State<NavDrawer> {
           ),
           ListTile(
             leading: Icon(Icons.picture_as_pdf,
-                color: HexColor(constants.primaryColor)),
+                color: HexColor(constants.secondaryColor)),
             title: Text(
               'Generate Certificate',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryColor),
+                  color: HexColor(constants.secondaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {},
           ),
           ListTile(
             leading:
-                Icon(Icons.history, color: HexColor(constants.primaryColor)),
+                Icon(Icons.history, color: HexColor(constants.secondaryColor)),
             title: Text(
               'Transaction history',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryColor),
+                  color: HexColor(constants.secondaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {
@@ -262,11 +240,11 @@ class _NavDrawerState extends State<NavDrawer> {
           ),
           ListTile(
             leading:
-                Icon(Icons.logout, color: HexColor(constants.primaryColor)),
+                Icon(Icons.logout, color: HexColor(constants.secondaryColor)),
             title: Text(
               'Logout',
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: HexColor(constants.primaryColor),
+                  color: HexColor(constants.secondaryColor),
                   fontWeight: FontWeight.normal),
             ),
             onTap: () => {Navigator.pop(context), logoutPopup()},

@@ -80,7 +80,7 @@ class _DashboardScreen extends State<DashboardScreen>
             _onItemTapped(index);
             // controller.initialPage = index;
             controller.animateToPage(index,
-                curve: Curves.easeInOut,
+                curve: Curves.ease,
                 duration: const Duration(
                     hours: 0, minutes: 0, seconds: 0, milliseconds: 200));
           },
@@ -110,7 +110,7 @@ class RadiantGradientMask extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 5, bottom: 12, right: 5, left: 5),
         decoration: BoxDecoration(
-          color: HexColor(constants.primaryColor),
+          color: HexColor(constants.secondaryColor),
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20)),

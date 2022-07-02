@@ -1,15 +1,17 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
 
+// ignore: must_be_immutable
 class NotifcationCard extends StatelessWidget {
   final String content;
-  final String tag;
-
-  const NotifcationCard({
+  bool opened;
+  NotifcationCard({
     Key? key,
     required this.content,
-    required this.tag,
+    required this.opened,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,9 @@ class NotifcationCard extends StatelessWidget {
       ),
       width: size.width,
       decoration: BoxDecoration(
-        color: HexColor(constants.primaryColor),
+        color: opened
+            ? HexColor(constants.blue)
+            : HexColor(constants.secondaryColor),
         borderRadius: BorderRadius.circular(12),
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -42,12 +46,9 @@ class NotifcationCard extends StatelessWidget {
             padding: const EdgeInsets.all(4),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Colors.white,
+              color: Colors.black54,
             ),
-            child: const Icon(
-              Icons.add_shopping_cart,
-              color: Colors.black,
-            ),
+            child: const Icon(Icons.add_shopping_cart),
           ),
           SizedBox(width: size.width * 0.05),
           Column(
