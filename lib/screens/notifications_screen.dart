@@ -34,12 +34,12 @@ class _NotificationsScreen extends State<NotificationsScreen>
                 backgroundColor: Colors.transparent,
                 content: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(
-                          width: 2, color: HexColor(constants.primaryColor)),
+                      border:
+                          Border.all(width: 2, color: HexColor(constants.blue)),
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.white),
                   //padding: const EdgeInsets.all(15),
-                  height: size.height * 0.25,
+                  height: size.height * 0.17,
                   width: size.width * 0.9,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +48,7 @@ class _NotificationsScreen extends State<NotificationsScreen>
                           width: size.width * 0.9,
                           height: size.height * 0.04,
                           decoration: BoxDecoration(
-                            color: HexColor(constants.primaryColor),
+                            color: HexColor(constants.blue),
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(28),
                                 topRight: Radius.circular(28)),
@@ -71,8 +71,8 @@ class _NotificationsScreen extends State<NotificationsScreen>
                               .textTheme
                               .bodyMedium!
                               .copyWith(
-                                  color: HexColor(constants.primaryColor),
-                                  fontWeight: FontWeight.bold),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.normal),
                         ),
                       ),
                       const Spacer(),
@@ -138,14 +138,13 @@ class _NotificationsScreen extends State<NotificationsScreen>
                     !opened[i]
                         ? GestureDetector(
                             onTap: () {
-                              notificationPopup("zzzzz");
+                              notificationPopup("Notification Content $i");
                               setState(() {
                                 opened[i] = true;
                               });
                             },
                             child: NotifcationCard(
-                              content: "content",
-                              tag: "ssss",
+                              content: "Notification Content $i",
                               opened: opened[i],
                             ),
                           )
@@ -175,8 +174,7 @@ class _NotificationsScreen extends State<NotificationsScreen>
                               });
                             },
                             child: NotifcationCard(
-                              content: "content",
-                              tag: "ssss",
+                              content: "Notification Content $i",
                               opened: opened[i],
                             ),
                           )

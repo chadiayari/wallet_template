@@ -49,7 +49,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
           child: ListView(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: size.height * 0.03),
+                padding: EdgeInsets.only(top: size.height * 0.06),
                 child: Center(
                   child: Text(
                     "How many shares to purchase?",
@@ -91,8 +91,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.2, vertical: size.height * 0.06),
+                padding: EdgeInsets.symmetric(horizontal: size.width * 0.2),
                 child: Row(
                   children: [
                     Text("Total to pay:    ",
@@ -109,6 +108,9 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                   ],
                 ),
               ),
+              SizedBox(
+                height: size.height * 0.06,
+              ),
               Text(
                 '* One share costs 10.00USD.',
                 style: Theme.of(context)
@@ -122,10 +124,10 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                       .caption!
                       .copyWith(fontWeight: FontWeight.normal)),
               SizedBox(
-                height: size.height * 0.1,
+                height: size.height * 0.06,
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
+                padding: EdgeInsets.symmetric(horizontal: size.width * 0.15),
                 child: MaterialButton(
                     minWidth: size.width * 0.4,
                     height: 50,

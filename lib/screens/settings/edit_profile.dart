@@ -1,3 +1,4 @@
+import 'package:wallet_template/components/buttons.dart';
 import 'package:wallet_template/components/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -56,17 +57,11 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
         decoration: backgroundGradientStyle,
         child: ListView(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: size.width * 0.05, top: size.width * 0.1),
-              child: const Align(
-                alignment: Alignment.topLeft,
-                child: Text("Full name"),
-              ),
-            ),
+            SizedBox(height: size.height * 0.03),
             Padding(
               padding: EdgeInsets.only(left: size.width * 0.05),
               child: EditProfileField(
+                hintText: "Full Name",
                 onPressed: () {},
                 inputController: firstNameController,
                 onChanged: (text) => setState(() {
@@ -78,16 +73,10 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                 }),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text("Phone Number"),
-              ),
-            ),
             Padding(
               padding: EdgeInsets.only(left: size.width * 0.05),
               child: EditProfileField(
+                hintText: "Phone Number",
                 onPressed: () {},
                 inputController: prfPhoneController,
                 onChanged: (text) => setState(() {
@@ -99,16 +88,10 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                 }),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text("Email"),
-              ),
-            ),
             Padding(
               padding: EdgeInsets.only(left: size.width * 0.05),
               child: EditProfileField(
+                hintText: "Email",
                 onPressed: () {},
                 inputController: emailController,
                 onChanged: (text) => setState(() {
@@ -120,16 +103,9 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                 }),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text("Gender"),
-              ),
-            ),
             Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 child:
                     FormField<String>(builder: (FormFieldState<String> state) {
                   return InputDecorator(
@@ -140,7 +116,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                       child: DropdownButton<String>(
                         icon: Icon(
                           Icons.keyboard_arrow_down,
-                          color: HexColor(constants.primaryColor),
+                          color: HexColor(constants.blue),
                         ),
                         isDense: true,
                         value: dropdownValue,
@@ -163,30 +139,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                     ),
                   );
                 })),
-            Container(
-              padding: const EdgeInsets.fromLTRB(60, 10, 60, 10),
-              child: MaterialButton(
-                minWidth: size.width * 0.4,
-                height: 50,
-                color: HexColor(constants.primaryColor),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
-                      Text(
-                        "Save",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
-                            color: Colors.white),
-                      ),
-                    ]),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ),
+            RedButton(title: "Save", onPressed: () {}),
             const Spacer(),
           ],
         ),

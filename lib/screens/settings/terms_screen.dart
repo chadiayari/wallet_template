@@ -52,7 +52,7 @@ class _TermsConditions extends State<TermsConditions>
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                    "- To the members of the Abu Dhabi Community Cooperative Board of Directors, after perusal of the Articles of Association of Abu Dhabi Community Cooperative, and after carefully studying and understanding its content and accepting to abide by all its provisions. I ask you to agree to accept my membership and my request to purchase the cooperative shares, and I bear all the responsibilities arising from that. I also certify that all information in this application and accompanying supporting documents are true and complete, and I pledge that I will bear the legal consequences if they arise."),
+                    "- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
               ),
             ),
             SizedBox(height: size.width * 0.1),
@@ -62,7 +62,7 @@ class _TermsConditions extends State<TermsConditions>
               child: const Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                    "- I acknowledge that I am aware that a member cannot own more than one-tenth of the subscribed capital of the cooperative as per Article 17 of the Articles of Association, and therefore I have no objection to adjusting the number of shares required, and any amounts returned to my aforementioned account, and the shares are credited In my approved name."),
+                    "- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
               ),
             ),
             SizedBox(height: size.width * 0.1),

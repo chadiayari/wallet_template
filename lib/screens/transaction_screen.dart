@@ -54,23 +54,24 @@ class _TransactionScreen extends State<TransactionScreen>
                 top: size.width * 0.03,
                 bottom: size.width * 0.05),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.black38,
               borderRadius: BorderRadius.circular(15),
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
-                  blurRadius: 6,
-                ),
-              ],
             ),
             child: Column(
               children: const [
                 TransactionWidget(
-                  date: "createdAt",
-                  id: "id",
-                  nbShares: "nb of shares",
-                  type: "transaction type",
-                  total: "total",
+                  date: "22 July 2022",
+                  id: "01",
+                  nbShares: "22",
+                  type: "Purchase",
+                  total: "22",
+                ),
+                TransactionWidget(
+                  date: "22 September 2022",
+                  id: "02",
+                  nbShares: "2",
+                  type: "Transfer",
+                  total: "20",
                 ),
               ],
             ),

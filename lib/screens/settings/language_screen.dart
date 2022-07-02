@@ -63,7 +63,7 @@ class _LanguageScreen extends State<LanguageScreen>
                   leading: Radio<SingingCharacter>(
                     value: SingingCharacter.english,
                     groupValue: _character,
-                    activeColor: HexColor(constants.primaryColor),
+                    activeColor: HexColor(constants.blue),
                     onChanged: (SingingCharacter? value) {
                       setState(() {
                         _character = value;
@@ -73,9 +73,8 @@ class _LanguageScreen extends State<LanguageScreen>
                 ),
               ],
             ),
-            const Spacer(),
+            SizedBox(height: size.width * 0.07),
             RedButton(title: "Confirm", onPressed: () {}),
-            SizedBox(height: size.width * 0.2),
           ],
         ),
       ),

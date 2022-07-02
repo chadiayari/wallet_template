@@ -114,8 +114,8 @@ class SignupInputField extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.only(
-          right: size.width * 0.05,
-          left: size.width * 0.05,
+          right: size.width * 0.07,
+          left: size.width * 0.07,
           bottom: size.width * 0.05),
       child: TextFormField(
         validator: (value) {
@@ -150,6 +150,7 @@ class SignupInputField extends StatelessWidget {
 }
 
 class EditProfileField extends StatelessWidget {
+  final String hintText;
   final VoidCallback onPressed;
   final TextEditingController inputController;
   final ValueChanged onChanged;
@@ -157,6 +158,7 @@ class EditProfileField extends StatelessWidget {
   const EditProfileField({
     Key? key,
     required this.onPressed,
+    required this.hintText,
     required this.inputController,
     required this.onChanged,
   }) : super(key: key);
@@ -182,6 +184,7 @@ class EditProfileField extends StatelessWidget {
             color: HexColor(constants.primaryColor),
             fontWeight: FontWeight.w500),
         decoration: InputDecoration(
+          hintText: hintText,
           fillColor: Colors.white,
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: HexColor(constants.primaryColor)),

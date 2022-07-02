@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wallet_template/theme.dart';
+import '../../../constants.dart' as constants;
 
 class TransactionWidget extends StatelessWidget {
   final String date;
@@ -20,46 +22,81 @@ class TransactionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return ExpansionTile(
-      collapsedIconColor: Colors.black,
-      iconColor: Colors.black,
-      title: Text(
-        date,
-        style: const TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
       ),
-      children: [
-        ListTile(
-          dense: true,
-          title: Column(children: [
-            Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text("Transaction ID"),
-                    Text(id),
-                    SizedBox(height: size.height * 0.01),
-                    const Text("Number of shares"),
-                    Text(nbShares),
-                  ],
-                ),
-                const Spacer(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text("Type"),
-                    Text(type),
-                    SizedBox(height: size.height * 0.01),
-                    const Text("Total"),
-                    Text(total),
-                  ],
-                ),
-              ],
-            )
-          ]),
+      child: ExpansionTile(
+        collapsedIconColor: Colors.white,
+        iconColor: Colors.white,
+        title: Text(
+          date,
+          style: const TextStyle(
+              color: Colors.white, fontWeight: FontWeight.normal, fontSize: 18),
         ),
-      ],
+        children: [
+          ListTile(
+            dense: true,
+            title: Column(children: [
+              SizedBox(height: size.height * 0.01),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Transaction ID",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        id,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      const Text(
+                        "Number of shares",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        nbShares,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Type",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        type,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      const Text(
+                        "Total",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        total,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: size.height * 0.02),
+            ]),
+          ),
+        ],
+      ),
     );
   }
 }

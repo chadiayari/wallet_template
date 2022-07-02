@@ -7,12 +7,10 @@ import '../../constants.dart' as constants;
 // ignore: must_be_immutable
 class NotifcationCard extends StatelessWidget {
   final String content;
-  final String tag;
   bool opened;
   NotifcationCard({
     Key? key,
     required this.content,
-    required this.tag,
     required this.opened,
   }) : super(key: key);
 
@@ -32,7 +30,7 @@ class NotifcationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: opened
             ? HexColor(constants.blue)
-            : HexColor(constants.primaryColor),
+            : HexColor(constants.secondaryColor),
         borderRadius: BorderRadius.circular(12),
         boxShadow: <BoxShadow>[
           BoxShadow(
@@ -48,13 +46,9 @@ class NotifcationCard extends StatelessWidget {
             padding: const EdgeInsets.all(4),
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Colors.white,
+              color: Colors.black54,
             ),
-            child: Icon((tag == "PURCHASE")
-                ? Icons.add_shopping_cart
-                : ((content.contains("recieved"))
-                    ? Icons.arrow_downward
-                    : Icons.arrow_upward)),
+            child: const Icon(Icons.add_shopping_cart),
           ),
           SizedBox(width: size.width * 0.05),
           Column(

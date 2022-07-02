@@ -1,11 +1,9 @@
-import 'package:wallet_template/components/buttons.dart';
-import 'package:wallet_template/screens/purchase_more_funds.dart';
+import 'package:wallet_template/components/home_widget.dart';
+import 'package:wallet_template/screens/sign_screens/fund_screen.dart';
 import 'package:wallet_template/screens/transfer_screen.dart';
 import 'package:wallet_template/widgets/dashboard_widget.dart';
 import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
-import '../../constants.dart' as constants;
 import '../constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
         endDrawer: const NavDrawer(),
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           centerTitle: false,
           title: Row(
@@ -44,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             ],
           ),
           shadowColor: Colors.transparent,
-          backgroundColor: HexColor(constants.blue),
+          backgroundColor: Colors.transparent,
           elevation: 1,
           iconTheme: const IconThemeData(
             color: Colors.white,
@@ -55,16 +54,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           child: ListView(
             children: [
               Container(
+                margin: EdgeInsets.symmetric(
+                    vertical: size.height * 0.03,
+                    horizontal: size.width * 0.05),
                 height: size.height * 0.15,
                 decoration: BoxDecoration(
-                  color: HexColor(constants.blue),
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)),
-                ),
+                    color: Colors.black38,
+                    borderRadius: BorderRadius.circular(20)),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: size.height * 0.03),
                     Text(
                       "You own",
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
@@ -75,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "0",
+                          "12",
                           style: Theme.of(context)
                               .textTheme
                               .headline5!
@@ -94,30 +93,32 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         ),
                       ],
                     ),
-                    SizedBox(height: size.height * 0.06),
                   ],
                 ),
               ),
-              SizedBox(height: size.height * 0.08),
-              WhiteButton(
-                  title: "Purchase",
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const PurchaseMoreScreen()));
-                  }),
-              // SizedBox(width: size.width * 0.05),
-              RedButton(
-                  title: "Transfer",
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const TransferScreen()));
-                  }),
-              const Spacer(),
-              SizedBox(height: size.height * 0.08),
+              Row(
+                children: [
+                  HomeWidget(
+                      title: "Purchase",
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const FundScreen(),
+                          ),
+                        );
+                      }),
+                  HomeWidget(
+                      title: "Transfer",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const TransferScreen()));
+                      }),
+                ],
+              ),
+              SizedBox(height: size.height * 0.03),
               const DashboardCard(
                   name: "Purchased Shares", nbShares: "0", icon: "Icons"),
               const DashboardCard(
