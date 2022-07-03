@@ -13,38 +13,35 @@ class _ProfileCapital extends State<ProfileCapital>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Transform.translate(
-      offset: Offset(0.0, -size.width * 0.2),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "Shares Capital Summary",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            const CapitalWidget(
-                ownedShares: "0", sharesValue: "0", sharesCapital: "0"),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            const Text(
-              "Current Profits Total",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-            ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
-            const ProfitWidget(totalRop: "0", totalRol: "0", totalEarning: "0")
-          ],
-        ),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Shares Capital Summary",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          const CapitalWidget(
+              ownedShares: "0", sharesValue: "0", sharesCapital: "0"),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          const Text(
+            "Current Profits Total",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          const ProfitWidget(totalRop: "0", totalRol: "0", totalEarning: "0")
+        ],
       ),
     );
   }

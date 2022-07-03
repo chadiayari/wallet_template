@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
@@ -44,11 +42,15 @@ class NotifcationCard extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(4),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              color: Colors.black54,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(100)),
+              color:
+                  HexColor(opened ? constants.secondaryColor : constants.blue),
             ),
-            child: const Icon(Icons.add_shopping_cart),
+            child: const Icon(
+              Icons.add_shopping_cart,
+              color: Colors.black,
+            ),
           ),
           SizedBox(width: size.width * 0.05),
           Column(

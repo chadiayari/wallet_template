@@ -51,11 +51,6 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
           ),
-          child: Icon(
-            Icons.account_circle_rounded,
-            size: size.width * 0.1,
-            color: Colors.white,
-          ),
         ),
         shadowColor: Colors.transparent,
         backgroundColor: HexColor(constants.blue),
@@ -81,43 +76,22 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                   ),
                   child: Column(
                     children: [
+                      Icon(
+                        Icons.account_circle_rounded,
+                        size: size.width * 0.15,
+                        color: Colors.white,
+                      ),
                       Container(
                         padding: EdgeInsets.only(top: size.width * 0.03),
                         child: Align(
-                          alignment: Alignment.topLeft,
+                          alignment: Alignment.center,
                           child: Text(
-                            "first name",
+                            "First Name",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6!
                                 .copyWith(fontWeight: FontWeight.bold),
                           ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Clipboard.setData(const ClipboardData(text: "sss"));
-                        },
-                        child: Row(
-                          children: [
-                            Text(
-                              "id",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(fontWeight: FontWeight.normal),
-                            ),
-                            IconButton(
-                              icon: const Icon(
-                                Icons.copy,
-                              ),
-                              iconSize: size.width * 0.05,
-                              onPressed: () {
-                                Clipboard.setData(
-                                    const ClipboardData(text: "sss"));
-                              },
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -173,15 +147,6 @@ class _ProfileScreen extends State<ProfileScreen> with WidgetsBindingObserver {
                       ),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    const Spacer(),
-                    Container(
-                      padding: EdgeInsets.only(top: size.width * 0.2),
-                    ),
-                    const Spacer(),
-                  ],
                 ),
               ],
             ),

@@ -19,40 +19,33 @@ class _ProfileProjects extends State<ProfileProjects>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Transform.translate(
-      offset: Offset(0.0, -size.width * 0.2),
-      child: Container(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "My projects",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+    return Container(
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(bottom: size.height * 0.02),
+            child: const Text(
+              "Project Name",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: size.height * 0.02),
-              child: const Text(
-                "Hoot",
-                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
-              ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const ProjectScreen()));
+            },
+            child: const ProjectWidget(
+              ownedShares: "0",
+              sharesValue: "0",
+              returnPurchase: "0",
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const ProjectScreen()));
-              },
-              child: const ProjectWidget(
-                ownedShares: "0",
-                sharesValue: "0",
-                returnPurchase: "0",
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
