@@ -78,7 +78,6 @@ class _DashboardScreen extends State<DashboardScreen>
           selectedItemColor: HexColor('#ffffff'),
           onTap: (index) {
             _onItemTapped(index);
-            // controller.initialPage = index;
             controller.animateToPage(index,
                 curve: Curves.ease,
                 duration: const Duration(
@@ -86,7 +85,6 @@ class _DashboardScreen extends State<DashboardScreen>
           },
         ),
         body: PageView(
-            //onWillPop: () async => false,
             onPageChanged: (value) => {
                   _onItemTapped(value),
                 },
@@ -105,15 +103,17 @@ class RadiantGradientMask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Transform.translate(
-      offset: const Offset(0.0, -5.0),
+      offset: Offset(0.0, -size.height * 0.007),
       child: Container(
-        padding: const EdgeInsets.only(top: 5, bottom: 12, right: 5, left: 5),
+        padding: const EdgeInsets.only(top: 0, bottom: 5, right: 5, left: 5),
         decoration: BoxDecoration(
           color: HexColor(constants.secondaryColor),
           borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20)),
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15)),
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: Colors.black.withOpacity(0.4),

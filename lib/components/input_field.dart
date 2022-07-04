@@ -180,14 +180,13 @@ class EditProfileField extends StatelessWidget {
         onChanged: onChanged,
         controller: inputController,
         cursorColor: Colors.white,
-        style: TextStyle(
-            color: HexColor(constants.primaryColor),
-            fontWeight: FontWeight.w500),
+        style:
+            const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
         decoration: InputDecoration(
           hintText: hintText,
           fillColor: Colors.white,
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: HexColor(constants.primaryColor)),
+          focusedBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
           ),
         ),
       ),

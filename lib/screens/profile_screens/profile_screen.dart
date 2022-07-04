@@ -5,7 +5,6 @@ import 'package:wallet_template/widgets/nav_drawer.dart';
 import 'package:wallet_template/widgets/profile_circles.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter/services.dart';
 
 import '../../../constants.dart' as constants;
 import '../../constants.dart';
