@@ -16,7 +16,6 @@ class HomeWidget extends StatelessWidget {
       width: size.width * 0.5,
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
       child: MaterialButton(
-          // minWidth: size.width * 0.2,
           height: 50,
           color: HexColor(constants.blue),
           shape: RoundedRectangleBorder(
@@ -58,7 +57,6 @@ class ContactWidget extends StatelessWidget {
       width: size.width * 0.5,
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
       child: MaterialButton(
-          // minWidth: size.width * 0.2,
           height: 50,
           color: Colors.black38,
           shape: RoundedRectangleBorder(

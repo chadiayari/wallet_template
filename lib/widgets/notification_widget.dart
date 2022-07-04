@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
 
-// ignore: must_be_immutable
 class NotifcationCard extends StatelessWidget {
   final String content;
   bool opened;
