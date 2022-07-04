@@ -147,7 +147,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("1 Share = 10 AED"),
+                      const Text("1 Share = 10 USD"),
                       SizedBox(height: size.height * 0.01),
                       const Text(
                           "The value of the share is determined by the Board  meeting at the end of each year."),

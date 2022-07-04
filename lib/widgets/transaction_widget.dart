@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wallet_template/theme.dart';
 import '../../../constants.dart' as constants;
+import '../theme.dart';
 
 class TransactionWidget extends StatelessWidget {
   final String date;
@@ -28,11 +28,11 @@ class TransactionWidget extends StatelessWidget {
       ),
       child: ExpansionTile(
         collapsedIconColor: Colors.white,
-        iconColor: Colors.white,
+        iconColor: HexColor(constants.blue),
+        textColor: HexColor(constants.blue),
         title: Text(
           date,
-          style: const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.normal, fontSize: 18),
+          style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
         ),
         children: [
           ListTile(

@@ -27,97 +27,62 @@ class ProjectWidget extends StatelessWidget {
           bottom: size.height * 0.02,
         ),
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: Colors.black38,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
                 Text(
                   "Total Shares Owned",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
                       fontSize: 15),
                 ),
-                Spacer(),
                 Text(
                   "Total Shares Value",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
                       fontSize: 15),
                 ),
-                Spacer(),
                 Text(
                   "Return on Purchase",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
                       fontSize: 15),
                 ),
               ],
             ),
-            const Spacer(),
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   ownedShares.toString(),
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
                 ),
-                const Spacer(),
                 Text(
-                  sharesValue.toString(),
+                  "$sharesValue USD",
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
                 ),
-                const Spacer(),
                 Text(
-                  returnPurchase.toString(),
+                  "$returnPurchase USD",
                   style: const TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 15),
-                ),
-              ],
-            ),
-            const Spacer(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "Shares",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 15),
-                ),
-                Spacer(),
-                Text(
-                  "AED",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 15),
-                ),
-                Spacer(),
-                Text(
-                  "AED",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
                       fontSize: 15),
                 ),
               ],
@@ -162,7 +127,7 @@ class ProjectImageBox extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.black.withOpacity(0.25),
+            color: Colors.white.withOpacity(0.25),
             blurRadius: 6,
           ),
         ],

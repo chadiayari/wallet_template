@@ -27,72 +27,76 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
     return Scaffold(
       body: Container(
         decoration: backgroundGradientStyle,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
           children: [
-            SizedBox(
-              height: size.height * 0.1,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: size.height * 0.1,
+                ),
+                SizedBox(
+                  height: size.height * 0.15,
+                  child: Text(
+                    "Wallet Template",
+                    style: Theme.of(context).textTheme.headline5!.copyWith(
+                        color: HexColor(constants.secondaryColor),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                LoginInputField(
+                  hintText: "Enter Username",
+                  onPressed: () {},
+                  inputController: emailController,
+                  onChanged: (text) => setState(() {
+                    if (text != "") {
+                      emailHasValue = true;
+                    } else {
+                      emailHasValue = false;
+                    }
+                  }),
+                  pwd: false,
+                ),
+                LoginInputField(
+                  hintText: "Enter Password",
+                  onPressed: () {},
+                  inputController: passwordController,
+                  onChanged: (text) => setState(() {
+                    if (text != "") {
+                      passwordHasValue = true;
+                    } else {
+                      passwordHasValue = false;
+                    }
+                  }),
+                  pwd: true,
+                ),
+                SizedBox(height: size.height * 0.02),
+                RedButton(
+                    title: "Sign In",
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const DashboardScreen()));
+                    }),
+                WhiteButton(
+                    title: "Sign Up",
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const SignupScreen()));
+                    }),
+                SizedBox(height: size.height * 0.07),
+                Text(
+                  "Copyright © 2022 Wallet Template",
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.normal),
+                ),
+                SizedBox(height: size.height * 0.01),
+              ],
             ),
-            SizedBox(
-              height: size.height * 0.15,
-              child: Text(
-                "Wallet Template",
-                style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: HexColor(constants.secondaryColor),
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            LoginInputField(
-              hintText: "Enter Username",
-              onPressed: () {},
-              inputController: emailController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  emailHasValue = true;
-                } else {
-                  emailHasValue = false;
-                }
-              }),
-              pwd: false,
-            ),
-            LoginInputField(
-              hintText: "Enter Password",
-              onPressed: () {},
-              inputController: passwordController,
-              onChanged: (text) => setState(() {
-                if (text != "") {
-                  passwordHasValue = true;
-                } else {
-                  passwordHasValue = false;
-                }
-              }),
-              pwd: true,
-            ),
-            SizedBox(height: size.height * 0.02),
-            RedButton(
-                title: "Sign In",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const DashboardScreen()));
-                }),
-            WhiteButton(
-                title: "Sign Up",
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const SignupScreen()));
-                }),
-            SizedBox(height: size.height * 0.07),
-            Text(
-              "Copyright © 2022 Wallet Template",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(color: Colors.white, fontWeight: FontWeight.normal),
-            ),
-            SizedBox(height: size.height * 0.01),
           ],
         ),
       ),

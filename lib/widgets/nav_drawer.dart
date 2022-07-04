@@ -3,7 +3,6 @@ import 'package:wallet_template/screens/sign_screens/welcome_screen.dart';
 import 'package:wallet_template/screens/transaction_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../../constants.dart' as constants;
 
