@@ -75,7 +75,7 @@ class _TransferScreen extends State<TransferScreen>
                       } else {}
                       nameHasValue = false;
                     }),
-                    controller: sharesController,
+                    controller: usernameController,
                     cursorColor: Colors.white,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
