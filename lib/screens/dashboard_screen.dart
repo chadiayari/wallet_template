@@ -25,64 +25,68 @@ class _DashboardScreen extends State<DashboardScreen>
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
-        backgroundColor: Colors.transparent,
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: HexColor(constants.blue),
-          showUnselectedLabels: false,
-          items: [
-            BottomNavigationBarItem(
-              icon: _selectedIndex == 0
-                  ? const RadiantGradientMask(
-                      child: Icon(
+        bottomNavigationBar: Transform.translate(
+          offset: Offset(0.0, size.height * 0.025),
+          child: BottomNavigationBar(
+            backgroundColor: HexColor(constants.blue),
+            showUnselectedLabels: false,
+            items: [
+              BottomNavigationBarItem(
+                icon: _selectedIndex == 0
+                    ? const RadiantGradientMask(
+                        child: Icon(
+                          Icons.home_outlined,
+                          color: Colors.black,
+                        ),
+                      )
+                    : const Icon(
                         Icons.home_outlined,
                         color: Colors.black,
                       ),
-                    )
-                  : const Icon(
-                      Icons.home_outlined,
-                      color: Colors.black,
-                    ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: _selectedIndex == 1
-                  ? const RadiantGradientMask(
-                      child: Icon(
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: _selectedIndex == 1
+                    ? const RadiantGradientMask(
+                        child: Icon(
+                          Icons.notifications_outlined,
+                          color: Colors.black,
+                        ),
+                      )
+                    : const Icon(
                         Icons.notifications_outlined,
                         color: Colors.black,
                       ),
-                    )
-                  : const Icon(
-                      Icons.notifications_outlined,
-                      color: Colors.black,
-                    ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: _selectedIndex == 2
-                  ? const RadiantGradientMask(
-                      child: Icon(
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: _selectedIndex == 2
+                    ? const RadiantGradientMask(
+                        child: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.black,
+                        ),
+                      )
+                    : const Icon(
                         Icons.account_circle_outlined,
                         color: Colors.black,
                       ),
-                    )
-                  : const Icon(
-                      Icons.account_circle_outlined,
-                      color: Colors.black,
-                    ),
-              label: '',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: HexColor('#ffffff'),
-          onTap: (index) {
-            _onItemTapped(index);
-            controller.animateToPage(index,
-                curve: Curves.ease,
-                duration: const Duration(
-                    hours: 0, minutes: 0, seconds: 0, milliseconds: 200));
-          },
+                label: '',
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: HexColor('#ffffff'),
+            onTap: (index) {
+              _onItemTapped(index);
+              controller.animateToPage(index,
+                  curve: Curves.ease,
+                  duration: const Duration(
+                      hours: 0, minutes: 0, seconds: 0, milliseconds: 200));
+            },
+          ),
         ),
         body: PageView(
             onPageChanged: (value) => {
@@ -108,7 +112,7 @@ class RadiantGradientMask extends StatelessWidget {
     return Transform.translate(
       offset: Offset(0.0, -size.height * 0.007),
       child: Container(
-        padding: const EdgeInsets.only(top: 0, bottom: 5, right: 5, left: 5),
+        padding: const EdgeInsets.only(top: 5, bottom: 10, right: 5, left: 5),
         decoration: BoxDecoration(
           color: HexColor(constants.secondaryColor),
           borderRadius: const BorderRadius.only(
