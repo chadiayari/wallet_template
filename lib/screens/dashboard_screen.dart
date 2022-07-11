@@ -29,7 +29,7 @@ class _DashboardScreen extends State<DashboardScreen>
 
     return Scaffold(
         bottomNavigationBar: Transform.translate(
-          offset: Offset(0.0, size.height * 0.025),
+          offset: Offset(0.0, size.height * 0.02),
           child: BottomNavigationBar(
             backgroundColor: HexColor(constants.blue),
             showUnselectedLabels: false,
@@ -112,7 +112,11 @@ class RadiantGradientMask extends StatelessWidget {
     return Transform.translate(
       offset: Offset(0.0, -size.height * 0.007),
       child: Container(
-        padding: const EdgeInsets.only(top: 5, bottom: 10, right: 5, left: 5),
+        padding: EdgeInsets.only(
+            top: size.height * 0.008,
+            bottom: size.height * 0.004,
+            right: size.height * 0.008,
+            left: size.height * 0.008),
         decoration: BoxDecoration(
           color: HexColor(constants.secondaryColor),
           borderRadius: const BorderRadius.only(

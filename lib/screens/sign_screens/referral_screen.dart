@@ -129,7 +129,7 @@ class _ReferralScreen extends State<ReferralScreen> {
                         )
                       : const Text(" ")),
               SizedBox(height: size.height * 0.4),
-              RedButton(
+              MainButton(
                   title: "Continue",
                   onPressed: () {
                     Navigator.push(context,

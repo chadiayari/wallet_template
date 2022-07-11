@@ -50,8 +50,7 @@ class _TransferScreen extends State<TransferScreen>
           child: ListView(
             children: [
               SizedBox(height: size.height * 0.04),
-              Align(
-                alignment: Alignment.centerLeft,
+              Center(
                 child: Text(
                   "Who are you transfering shares to?",
                   style: Theme.of(context)
@@ -88,8 +87,7 @@ class _TransferScreen extends State<TransferScreen>
                 ),
               ),
               SizedBox(height: size.height * 0.04),
-              Align(
-                alignment: Alignment.centerLeft,
+              Center(
                 child: Text("How many shares are you willing to transfer?",
                     style: Theme.of(context)
                         .textTheme
@@ -126,7 +124,7 @@ class _TransferScreen extends State<TransferScreen>
               SizedBox(
                 height: size.height * 0.1,
               ),
-              WhiteButton(title: "Transfer", onPressed: () {})
+              SecondaryButton(title: "Transfer", onPressed: () {})
             ],
           ),
         ));

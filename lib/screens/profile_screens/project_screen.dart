@@ -117,7 +117,7 @@ class _ProjectScreen extends State<ProjectScreen> with WidgetsBindingObserver {
               Row(
                 children: [
                   const Spacer(),
-                  IconRedButton(
+                  IconMainButton(
                       iconName: const Icon(
                         Icons.arrow_downward,
                         color: Colors.white,

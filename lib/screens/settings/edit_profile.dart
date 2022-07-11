@@ -139,7 +139,7 @@ class _EditProfile extends State<EditProfile> with WidgetsBindingObserver {
                     ),
                   );
                 })),
-            RedButton(title: "Save", onPressed: () {}),
+            MainButton(title: "Save", onPressed: () {}),
             const Spacer(),
           ],
         ),

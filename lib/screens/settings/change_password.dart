@@ -101,7 +101,7 @@ class _ChangePassword extends State<ChangePassword>
               }),
             ),
             SizedBox(height: size.height * 0.03),
-            RedButton(title: "Save", onPressed: () {}),
+            MainButton(title: "Save", onPressed: () {}),
           ],
         ),
       ),

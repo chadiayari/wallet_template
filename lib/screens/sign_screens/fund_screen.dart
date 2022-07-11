@@ -62,7 +62,7 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: size.height * 0.03, horizontal: size.width * 0.4),
+                    vertical: size.height * 0.03, horizontal: size.width * 0.3),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
@@ -90,23 +90,21 @@ class _FundScreen extends State<FundScreen> with WidgetsBindingObserver {
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: size.width * 0.2),
-                child: Row(
-                  children: [
-                    Text("Total to pay:    ",
-                        style: Theme.of(context)
-                            .textTheme
-                            .subtitle2
-                            ?.copyWith(fontWeight: FontWeight.normal)),
-                    Text(
-                      "$totalPay2 USD",
-                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                          color: HexColor(constants.blue),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Total to pay:    ",
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle2
+                          ?.copyWith(fontWeight: FontWeight.normal)),
+                  Text(
+                    "$totalPay2 USD",
+                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                        color: HexColor(constants.blue),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
               SizedBox(
                 height: size.height * 0.06,

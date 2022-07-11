@@ -72,7 +72,7 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
                   pwd: true,
                 ),
                 SizedBox(height: size.height * 0.02),
-                RedButton(
+                MainButton(
                     title: "Sign In",
                     onPressed: () {
                       Navigator.pushReplacement(
@@ -80,7 +80,7 @@ class _WelcomeScreen extends State<WelcomeScreen> with WidgetsBindingObserver {
                           MaterialPageRoute(
                               builder: (_) => const DashboardScreen()));
                     }),
-                WhiteButton(
+                SecondaryButton(
                     title: "Sign Up",
                     onPressed: () {
                       Navigator.push(
