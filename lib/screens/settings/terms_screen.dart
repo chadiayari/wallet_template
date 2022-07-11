@@ -83,7 +83,7 @@ class _TermsConditions extends State<TermsConditions>
               ),
             ),
             SizedBox(height: size.width * 0.35),
-            RedButton(
+            MainButton(
                 title: "Close",
                 onPressed: () {
                   Navigator.pop(context);

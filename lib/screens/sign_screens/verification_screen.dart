@@ -78,7 +78,7 @@ class _VerifyDetails extends State<VerifyDetails> with WidgetsBindingObserver {
                 inputController: emailController),
           ),
           SizedBox(height: size.height * 0.35),
-          RedButton(
+          MainButton(
               title: "Continue",
               onPressed: () {
                 Navigator.push(context,

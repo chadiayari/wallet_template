@@ -74,7 +74,7 @@ class _LanguageScreen extends State<LanguageScreen>
               ],
             ),
             SizedBox(height: size.width * 0.07),
-            RedButton(
+            MainButton(
                 title: "Confirm",
                 onPressed: () {
                   Navigator.pop(context);
